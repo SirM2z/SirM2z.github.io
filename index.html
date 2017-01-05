@@ -9,88 +9,36 @@
       margin: 0;
       padding: 0;
     }
-    
-    .circleProgress_wrapper {
-      width: 200px;
-      height: 200px;
-      margin: 50px auto;
-      position: relative;
-      border: 1px solid #ddd;
+    body {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      color: #2c3e50;
     }
-    
-    .wrapper {
-      width: 100px;
-      height: 200px;
-      position: absolute;
-      overflow: hidden;
-      top: 0;
+    a {
+      color: #42b983;
+      display: inline-block;
+      padding: 5px 10px 0 0;
     }
-    
-    .right {
-      right: 0;
+    h1, h2 {
+      font-weight: normal;
     }
-    
-    .left {
-      left: 0;
-    }
-    
-    .circleProgress {
-      width: 160px;
-      height: 160px;
-      border: 20px solid transparent;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      -webkit-transform: rotate(45deg);
-    }
-    
-    .rightcircle {
-      border-top: 20px solid yellow;
-      border-right: 20px solid yellow;
-      right: 0;
-      -webkit-animation: circleProgressLoad_right 5s linear infinite;
-    }
-    
-    .leftcircle {
-      border-bottom: 20px solid yellow;
-      border-left: 20px solid yellow;
-      left: 0;
-      -webkit-animation: circleProgressLoad_left 5s linear infinite;
-    }
-    
-    @-webkit-keyframes circleProgressLoad_right {
-      0% {
-        -webkit-transform: rotate(45deg);
-      }
-      50%,
-      100% {
-        -webkit-transform: rotate(225deg);
-      }
-    }
-    
-    @-webkit-keyframes circleProgressLoad_left {
-      0%,
-      50% {
-        -webkit-transform: rotate(45deg);
-      }
-      100% {
-        -webkit-transform: rotate(225deg);
-      }
+    .item {
+      padding: 20px;
+      float: left;
     }
   </style>
 </head>
 
 <body>
   <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="canvas-nest.min.js"></script>
-  <a href="./ALL_IN.conf">surge 全局配置</a>
-  <a href="./ss.conf">surge 分流配置</a>
-  <a href="./vue2.0test/index.html">vue2.0-all-test Demo</a>
-  <div class="circleProgress_wrapper">
-    <div class="wrapper right">
-      <div class="circleProgress rightcircle"></div>
+  <div class="main">
+    <div class="item">
+      <h2>Surge:</h2>
+      <a href="./ALL_IN.conf">surge 全局配置</a>
+      <a href="./ss.conf">surge 分流配置</a>
     </div>
-    <div class="wrapper left">
-      <div class="circleProgress leftcircle"></div>
+    <div class="item">
+      <h2>vue2.0-demo:</h2>
+      <a href="./vue2.0test/index.html">vue2.0-all-test Repository Demo</a>
     </div>
   </div>
 </body>
