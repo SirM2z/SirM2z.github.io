@@ -51,6 +51,7 @@
 
 <body>
   <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="./lib/canvas-nest.min.js"></script>
+  <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="./lib/clipboard.min.js"></script>
   <div class="main">
     <div class="item">
       <h2>Surge:</h2>
@@ -81,7 +82,17 @@
       <a href="./flexbox-cssgrid/index.html">flexbox</a>
     </div>
     <input type="text" class="test-input">
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="div">Copy</button>
   </div>
+  <script>
+    var clipboard = new Clipboard('.btn');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+  </script>
 </body>
 
 </html>
