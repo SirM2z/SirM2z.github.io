@@ -52,6 +52,7 @@
 <body>
   <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="./lib/canvas-nest.min.js"></script>
   <script type="text/javascript" src="./lib/clipboard.min.js"></script>
+  <script type="text/javascript" src="./lib/vue.min.js"></script>
   <div class="main">
     <div class="item">
       <h2>Surge:</h2>
@@ -83,6 +84,9 @@
     </div>
     <input type="text" class="test-input">
     <div class="btn">Copy</div>
+    <div class="test">
+      <h3>{{msg}}</h3>
+    </div>
   </div>
   <script>
     var clipboard = new Clipboard('.btn', {
@@ -96,6 +100,12 @@
     clipboard.on('error', function(e) {
       console.log(e);
     });
+    var app = new Vue({
+      el: '.test',
+      data: {
+        msg: 'hello'
+      }
+    })
   </script>
 </body>
 
