@@ -90,7 +90,7 @@
     </div>
   </div>
   <script type="text/x-template" id="hello-world-template">
-    <p>Hello hello hello</p>
+    <p>{{msg}}</p>
   </script>
   <script>
     var clipboard = new Clipboard('.btn', {
@@ -105,7 +105,10 @@
       console.log(e);
     });
     Vue.component('hello-world', {
-      template: '#hello-world-template'
+      template: '#hello-world-template',
+      data: {
+        msg: 1111
+      }
     })
     var app = new Vue({
       el: '.test',
