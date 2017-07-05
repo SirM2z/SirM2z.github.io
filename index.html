@@ -112,8 +112,10 @@
     })
     var app = new Vue({
       el: '.test',
-      data: {
-        msg: 'hello'
+      data: function () {
+        return {
+          msg: 'hello'
+        }
       }
     })
   </script>
