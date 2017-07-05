@@ -106,16 +106,16 @@
     });
     Vue.component('hello-world', {
       template: '#hello-world-template',
-      data: {
-        msg2: 1111
+      data: function () {
+        return {
+          msg2: 1111
+        }
       }
     })
     var app = new Vue({
       el: '.test',
-      data: function () {
-        return {
-          msg: 'hello'
-        }
+      data: {
+        msg: 'hello'
       }
     })
   </script>
