@@ -14,7 +14,7 @@
     }
     body {
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      color: #2c3e50;
+      color: #fff;
     }
     a {
       color: #42b983;
@@ -26,6 +26,7 @@
       font-weight: normal;
       line-height: 25px;
     }
+    .main {z-index: 2;}
     .main:after {content: ''; display: block; clear: both;}
     .item {
       padding: 20px 0 0 20px;
@@ -56,12 +57,23 @@
       text-align: center;
       cursor: pointer;
     }
+    .container{
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      padding: 0;
+      z-index: -1;
+    }
+    .container canvas {z-index: -1;}
   </style>
 </head>
 
 <body>
   <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="./lib/canvas-nest.min.js"></script>
   <script type="text/javascript" src="./lib/clipboard.min.js"></script>
+  <div id="jsi-particle-container" class="container"></div>
   <div class="main">
     <div class="item">
       <h2>Surge:</h2>
@@ -101,6 +113,8 @@
       <h3>{{msg}}</h3>
     </div>
   </div>
+  <script type="text/javascript" src="./lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/canvas.3d.js"></script>
   <script type="text/javascript" src="./lib/vue.min.js"></script>
   <script type="text/x-template" id="hello-world-template">
     <p>{{msg2}}</p>
