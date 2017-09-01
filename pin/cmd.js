@@ -13,9 +13,9 @@ $ui.render({
       },
       events: {
         tapped: function () {
-          $app.tips("在 App Store 内通过分享面板使用")
-          // var items = $clipboard.link
-          var items = 'www.google.com'
+          var items = $clipboard.link
+          $app.tips(items)
+          items = "www.google.com"
           $app.openURL(items)
         }
       }
