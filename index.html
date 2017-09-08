@@ -68,6 +68,11 @@
       z-index: -1;
     }
     .container canvas {z-index: -1;}
+    #game {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+    }
   </style>
 </head>
 
@@ -113,6 +118,16 @@
       <hello-world></hello-world>
       <h3>{{msg}}</h3>
     </div>
+  </div>
+  <div id="game">
+    <h3>A Spaceship Game</h3>
+    <ul>
+      <li>click <a href="javascript:var s = document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='./lib/asteroids.min.js';void(0);">here</a>to play</li>
+      <li>Use the arrow keys to steer your ship</li>
+      <li>Space to shoot</li>
+      <li>Show your enemies by pressing "B". Your score is shown in the right lower corner.</li>
+      <li>Enjoy playing! Press Esc to quit.</li>
+    </ul>
   </div>
   <script type="text/javascript" src="./lib/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="./lib/canvas.3d.js"></script>
