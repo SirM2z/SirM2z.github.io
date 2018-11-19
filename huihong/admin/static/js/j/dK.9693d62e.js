@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["j/dK"],{"j/dK":function(e,t,n){"use strict";n.r(t);var s={name:"User"},l=n("KHd+"),a=Object(l.a)(s,function(e,t){var n=t._c;return n("div",{staticStyle:{padding:"30px"}},[n("el-alert",{attrs:{closable:!1,title:"用户",type:"success"}})],1)},[],!0,null,null,null);a.options.__file="user.vue";t.default=a.exports}}]);

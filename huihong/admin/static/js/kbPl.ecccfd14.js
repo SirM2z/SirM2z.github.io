@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["kbPl"],{kbPl:function(e,t,l){"use strict";l.r(t);var n=l("KHd+"),s=Object(n.a)({},function(e,t){var l=t._c;return l("div",{staticStyle:{padding:"30px"}},[l("el-alert",{attrs:{closable:!1,title:"user",type:"success"}})],1)},[],!0,null,null,null);s.options.__file="index.vue";t.default=s.exports}}]);
