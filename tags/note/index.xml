@@ -18,7 +18,7 @@
       <pubDate>Wed, 22 Nov 2017 22:57:16 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</guid>
-      <description></description>
+      <description>[[Prototype]] 链 1 2 3 4 5 6 function Foo () { this.tmp = &amp;#39;b&amp;#39; } var a = new Foo() Object.getPrototypeOf(a) === Foo.prototype // true a.tmp // &amp;#39;b&amp;#39; 调用 new Foo() 时会创建 a， 其中的一步就是给 a 一个内部的 [[Prototype]] 链接， 关联到 Foo.prototype 指向的那个对象。 constructor</description>
     </item>
     
     <item>
@@ -117,7 +117,7 @@
       <pubDate>Wed, 01 Jun 2016 20:02:41 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/es6-learn-notes-5/</guid>
-      <description>函数 参数的默认值 基本用法 1 2 3 4 5 6 7 function log(x, y = &amp;#39;World&amp;#39;) { console.log(x, y); } log(&amp;#39;Hello&amp;#39;) // Hello World log(&amp;#39;Hello&amp;#39;, &amp;#39;China&amp;#39;) // Hello China log(&amp;#39;Hello&amp;#39;, &amp;#39;&amp;#39;) // Hello 与解构赋值默认值结合使用 1 2 3 4 5 6 7 8 function foo({x, y = 5}) { console.log(x, y); }</description>
+      <description></description>
     </item>
     
     <item>
@@ -180,7 +180,7 @@
       <pubDate>Wed, 01 Jun 2016 16:58:04 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/react-learn-notes/</guid>
-      <description>组件的生命周期 Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM React 为每个状态都提供了两种处理函</description>
+      <description></description>
     </item>
     
   </channel>

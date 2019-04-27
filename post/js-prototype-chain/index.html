@@ -216,7 +216,7 @@
 </div>
 <p>图解结论二：</p>
 
-<p><img src="./images/js原型链.png" alt="" /></p>
+<p><img src="/js原型链.png" alt="" /></p>
 
 <p>其实整个js原型链都符合结论一，只有结论二中的前两行公式是不符合的。它们两个应该是为了让整个原型链导向null而设计的，其他所有的链都可以通过结论一推导出来。不过在我们平常使用js的原型链时，是没必要往最顶层推导的（即null），所以前两个特殊公式基本用不到，在我们自己的代码中，只需参考结论一就可以推导所有原型链。</p>
 
@@ -226,11 +226,11 @@
 
 <p>首先看一下几个内置的构造函数(String\Number\Boolean\Array\Date\Symbol\Object\Function)的<code>prototype</code>：</p>
 
-<p><img src="./images/构造函数的prototype.png" alt="" /></p>
+<p><img src="/构造函数的prototype.png" alt="" /></p>
 
 <p>可能这样还不够直观，那么看一下这张图：</p>
 
-<p><img src="./images/typeof(构造函数的prototype).png" alt="" /></p>
+<p><img src="/typeof(构造函数的prototype).png" alt="" /></p>
 
 <p>看出来区别了吧，<code>typeof(Function.prototype)</code>竟然还是<code>function</code>，从这个角度继续探索，也就会得出上述前提公式的第二条<code>Function.constructor === Function</code>，第一条公式可以通过自行比较得出。</p>
 
