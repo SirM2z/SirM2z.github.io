@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>prototype on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/tags/prototype/</link>
+    <link>https://sirm2z.github.io/tags/prototype/</link>
     <description>Recent content in prototype on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Mon, 06 Mar 2017 18:08:27 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/tags/prototype/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/tags/prototype/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Javascript 原型链小结</title>
-      <link>http://sirm2z.github.io/post/js-prototype-chain/</link>
+      <link>https://sirm2z.github.io/post/js-prototype-chain/</link>
       <pubDate>Mon, 06 Mar 2017 18:08:27 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/js-prototype-chain/</guid>
+      <guid>https://sirm2z.github.io/post/js-prototype-chain/</guid>
       <description>更新（2018-04-15） 原型链理解：每个函数对象都含有一个原型对象，当访问某个对象的属性时，会先从自身属性查找（函数对象则从自身的原型对</description>
     </item>
     

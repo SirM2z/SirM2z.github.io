@@ -2,184 +2,184 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>note on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/tags/note/</link>
+    <link>https://sirm2z.github.io/tags/note/</link>
     <description>Recent content in note on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Wed, 22 Nov 2017 22:57:16 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/tags/note/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/tags/note/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>你不知道的 JS 读书笔记（五）-- 原型[propotype]</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</link>
       <pubDate>Wed, 22 Nov 2017 22:57:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（四）-- 混合对象类</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</link>
       <pubDate>Wed, 22 Nov 2017 22:56:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</guid>
       <description>寄生继承 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 //“传统的 JavaScript 类” Vehicle function Vehicle() { this.ehgines = 1; } Vehicle.prototype.ignition = function() { console.log( &amp;#34;Turning on my engine.&amp;#34; ); }; Vehicle.prototype.drive = function() {</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（三）-- this/原型对象</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</link>
       <pubDate>Wed, 22 Nov 2017 22:55:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</guid>
       <description>this 绑定规则 默认绑定 严格模式下绑定到undefined，否则绑定到全局对象 1 2 3 4 5 function foo () { console.log(this.a); } var a = 2; foo(); // 2 隐式绑定 由上下文对象调用，绑定到</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（二）-- 闭包/模块</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</link>
       <pubDate>Wed, 22 Nov 2017 22:54:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</guid>
       <description>闭包的效果 1 2 3 4 5 6 7 8 9 10 11 12 13 function foo () { var a = 2; function bar () { console.log(a); } return bar; } var baz = foo() baz() // 2 循环与闭包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 for (var i = 0; i &amp;lt; 5;</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（一）-- 作用域</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</link>
       <pubDate>Wed, 22 Nov 2017 22:53:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</guid>
       <description>作用域中的 LHS,RHS 查询 var a = 2; 引擎对a的查找是LHS查询，指查询a的内存位置，并非查找其真实的值 console.log(a) 引擎对a的查找是RHS查询，指查询a的实际值，并</description>
     </item>
     
     <item>
       <title>flexbox 深入理解</title>
-      <link>http://sirm2z.github.io/post/flexbox-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/flexbox-learn-notes/</link>
       <pubDate>Thu, 11 May 2017 22:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/flexbox-learn-notes/</guid>
-      <description></description>
+      <guid>https://sirm2z.github.io/post/flexbox-learn-notes/</guid>
+      <description>flexbox 巩固加深 配合flexbox工具食用更佳 flexbox 支持情况 整体印象 flex: 0 ( flex-grow ) 1 ( flex-shrink ) auto ( flex-basis ); 默认值-( 属性 ) flex-basis 控制着元素在沿着主轴上 grow 和 shrik 之前最终能</description>
     </item>
     
     <item>
       <title>Vue2.x响应式原理， Vue 与 React 响应式简单对比</title>
-      <link>http://sirm2z.github.io/post/vue2-responsive-data-achieve/</link>
+      <link>https://sirm2z.github.io/post/vue2-responsive-data-achieve/</link>
       <pubDate>Thu, 04 May 2017 20:22:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/vue2-responsive-data-achieve/</guid>
+      <guid>https://sirm2z.github.io/post/vue2-responsive-data-achieve/</guid>
       <description>实现的最终目标 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const demo = new Vue({ data: { text: &amp;#34;before&amp;#34;, }, // 对应的template 为 &amp;lt;div&amp;gt;&amp;lt;span&amp;gt;{{text}}&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; render(h){ return h(&amp;#39;div&amp;#39;, {}, [ h(&amp;#39;span&amp;#39;, {}, [this.__toString__(this.text)]) ]) } }) setTimeout(function(){ demo.text = &amp;#34;after&amp;#34; }, 3000) 对应的虚拟DOM</description>
     </item>
     
     <item>
       <title>Ubuntu 安装及配置</title>
-      <link>http://sirm2z.github.io/post/ubuntu-install-notes/</link>
+      <link>https://sirm2z.github.io/post/ubuntu-install-notes/</link>
       <pubDate>Tue, 24 Jan 2017 20:22:04 +5200</pubDate>
       
-      <guid>http://sirm2z.github.io/post/ubuntu-install-notes/</guid>
+      <guid>https://sirm2z.github.io/post/ubuntu-install-notes/</guid>
       <description>分区 逻辑分区，200M，起始，Ext4日志文件系统，/boot；（引导分区200M足够） 逻辑分区，4000M，起始，交换空间，无挂载点；（交</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（八）-- class</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-8/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-8/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:44 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-8/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-8/</guid>
       <description>class 基本语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 //ES5 function Point(x,y){ this.x = x; this.y = y; } Point.prototype.toString = function () { return &amp;#39;(&amp;#39; + this.x + &amp;#39;, &amp;#39; + this.y + &amp;#39;)&amp;#39;; }; //ES6 class Point { //constructo</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（七）-- Generator 与 Promise</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-7/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-7/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:43 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-7/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-7/</guid>
       <description>Generator函数 执行Generator函数会返回一个遍历器对象，也就是说，Generator函数除了状态机，还是一个遍历器对象生成函数</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（六）-- set map 以及 for...of</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-6/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-6/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:42 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-6/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-6/</guid>
       <description>Set 新的数据解构，成员值是唯一的 1 2 3 4 5 6 7 8 9 10 11 12 13 14 //不能添加相同的值 var s = new Set(); [2, 3, 5, 4, 5, 2, 2].map(x =&amp;gt; s.add(x)); for (let i of s) { console.log(i); } // 2 3 5 4 //去除</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（五）-- 函数与对象</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-5/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-5/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:41 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-5/</guid>
-      <description>函数 参数的默认值 基本用法 1 2 3 4 5 6 7 function log(x, y = &amp;#39;World&amp;#39;) { console.log(x, y); } log(&amp;#39;Hello&amp;#39;) // Hello World log(&amp;#39;Hello&amp;#39;, &amp;#39;China&amp;#39;) // Hello China log(&amp;#39;Hello&amp;#39;, &amp;#39;&amp;#39;) // Hello 与解构赋值默认值结合使用 1 2 3 4 5 6 7 8 function foo({x, y = 5}) { console.log(x, y); }</description>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-5/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>ES6 学习笔记（四）-- 数值与数组</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-4/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-4/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:40 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-4/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-4/</guid>
       <description>数值的扩展 Number.isFinite(), Number.isNaN() 与传统的全局方法isFinite()和isNaN()的区别在于，传统方法先调用Number()将非数值的值转为数值，再进行判断</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（三）-- 字符串扩展</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-3/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-3/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:39 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-3/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-3/</guid>
       <description>字符串扩展 for&amp;hellip;of循环遍历字符串 1 2 3 4 5 6 7 let text = &amp;#39;abc&amp;#39; for (let i of text) { console.log(i); } //a //b //c 新增确定一个字符串是否包含在另一个字符串中，e</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（二）-- 解构赋值</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-2/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-2/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:38 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-2/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-2/</guid>
       <description>解构赋值 数组的解构赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 let [foo, [[bar], baz]] = [1, [[2], 3]]; foo // 1 bar // 2 baz // 3 let [ , , third] = [&amp;#34;foo&amp;#34;, &amp;#34;bar&amp;#34;, &amp;#34;baz&amp;#34;]; third // &amp;#34;baz&amp;#34; let [x, , y] = [1, 2, 3]; x //</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（一）-- let const</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-1/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-1/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-1/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-1/</guid>
       <description>let和const命令 let和const声明的变量只在代码块内有效 1 2 3 4 5 6 7 { let a = 10; var b = 1; } a // ReferenceError: a is not defined. b // 1 不存在变量提升 变量一</description>
     </item>
     
     <item>
       <title>Webpack 学习笔记</title>
-      <link>http://sirm2z.github.io/post/webpack-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/webpack-learn-notes/</link>
       <pubDate>Wed, 01 Jun 2016 17:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/webpack-learn-notes/</guid>
+      <guid>https://sirm2z.github.io/post/webpack-learn-notes/</guid>
       <description>webpack.config.js配置文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49</description>
     </item>
     
     <item>
       <title>Redux 学习笔记</title>
-      <link>http://sirm2z.github.io/post/redux-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/redux-learn-notes/</link>
       <pubDate>Wed, 01 Jun 2016 17:01:08 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/redux-learn-notes/</guid>
+      <guid>https://sirm2z.github.io/post/redux-learn-notes/</guid>
       <description>redux流程 view直接触发dispatch 将action发送到reducer中后，根节点上会更新props，改变全局view redux概</description>
     </item>
     
     <item>
       <title>React 学习笔记</title>
-      <link>http://sirm2z.github.io/post/react-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/react-learn-notes/</link>
       <pubDate>Wed, 01 Jun 2016 16:58:04 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/react-learn-notes/</guid>
+      <guid>https://sirm2z.github.io/post/react-learn-notes/</guid>
       <description>组件的生命周期 Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM React 为每个状态都提供了两种处理函</description>
     </item>
     

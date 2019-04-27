@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/categories/ubuntu/</link>
+    <link>https://sirm2z.github.io/categories/ubuntu/</link>
     <description>Recent content in Ubuntu on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Tue, 24 Jan 2017 20:22:04 +5200</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu 安装及配置</title>
-      <link>http://sirm2z.github.io/post/ubuntu-install-notes/</link>
+      <link>https://sirm2z.github.io/post/ubuntu-install-notes/</link>
       <pubDate>Tue, 24 Jan 2017 20:22:04 +5200</pubDate>
       
-      <guid>http://sirm2z.github.io/post/ubuntu-install-notes/</guid>
+      <guid>https://sirm2z.github.io/post/ubuntu-install-notes/</guid>
       <description>分区 逻辑分区，200M，起始，Ext4日志文件系统，/boot；（引导分区200M足够） 逻辑分区，4000M，起始，交换空间，无挂载点；（交</description>
     </item>
     

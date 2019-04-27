@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>工作流 on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+    <link>https://sirm2z.github.io/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
     <description>Recent content in 工作流 on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Fri, 18 Dec 2015 22:00:55 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GitHub 从 fork 到 pull request 之基础流程</title>
-      <link>http://sirm2z.github.io/post/github-workflow/</link>
+      <link>https://sirm2z.github.io/post/github-workflow/</link>
       <pubDate>Fri, 18 Dec 2015 22:00:55 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/github-workflow/</guid>
+      <guid>https://sirm2z.github.io/post/github-workflow/</guid>
       <description>之前接触了github，但每次使用都还要查阅一些基础用法，因此打算在此总结回顾一下。 首先来一遍从fork到pull request这个过程的基</description>
     </item>
     

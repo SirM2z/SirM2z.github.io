@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://sirm2z.github.io/sitemap.xml
+Sitemap: https://sirm2z.github.io/sitemap.xml

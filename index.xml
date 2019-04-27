@@ -2,256 +2,256 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/</link>
+    <link>https://sirm2z.github.io/</link>
     <description>Recent content on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Wed, 22 Nov 2017 22:57:16 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://sirm2z.github.io/about/</link>
+      <link>https://sirm2z.github.io/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/about/</guid>
+      <guid>https://sirm2z.github.io/about/</guid>
       <description>Ryan 是我开始工作的第一个英文名，非常有纪念意义。 目前从事前端工作，短期目标：进入阿里💪💪💪。 希望自己能够保持积极向上的态度，面对生活，面对工作</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（五）-- 原型[propotype]</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</link>
       <pubDate>Wed, 22 Nov 2017 22:57:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（四）-- 混合对象类</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</link>
       <pubDate>Wed, 22 Nov 2017 22:56:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</guid>
       <description>寄生继承 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 //“传统的 JavaScript 类” Vehicle function Vehicle() { this.ehgines = 1; } Vehicle.prototype.ignition = function() { console.log( &amp;#34;Turning on my engine.&amp;#34; ); }; Vehicle.prototype.drive = function() {</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（三）-- this/原型对象</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</link>
       <pubDate>Wed, 22 Nov 2017 22:55:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</guid>
       <description>this 绑定规则 默认绑定 严格模式下绑定到undefined，否则绑定到全局对象 1 2 3 4 5 function foo () { console.log(this.a); } var a = 2; foo(); // 2 隐式绑定 由上下文对象调用，绑定到</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（二）-- 闭包/模块</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</link>
       <pubDate>Wed, 22 Nov 2017 22:54:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</guid>
       <description>闭包的效果 1 2 3 4 5 6 7 8 9 10 11 12 13 function foo () { var a = 2; function bar () { console.log(a); } return bar; } var baz = foo() baz() // 2 循环与闭包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 for (var i = 0; i &amp;lt; 5;</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（一）-- 作用域</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</link>
       <pubDate>Wed, 22 Nov 2017 22:53:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</guid>
       <description>作用域中的 LHS,RHS 查询 var a = 2; 引擎对a的查找是LHS查询，指查询a的内存位置，并非查找其真实的值 console.log(a) 引擎对a的查找是RHS查询，指查询a的实际值，并</description>
     </item>
     
     <item>
       <title>flexbox 深入理解</title>
-      <link>http://sirm2z.github.io/post/flexbox-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/flexbox-learn-notes/</link>
       <pubDate>Thu, 11 May 2017 22:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/flexbox-learn-notes/</guid>
-      <description></description>
+      <guid>https://sirm2z.github.io/post/flexbox-learn-notes/</guid>
+      <description>flexbox 巩固加深 配合flexbox工具食用更佳 flexbox 支持情况 整体印象 flex: 0 ( flex-grow ) 1 ( flex-shrink ) auto ( flex-basis ); 默认值-( 属性 ) flex-basis 控制着元素在沿着主轴上 grow 和 shrik 之前最终能</description>
     </item>
     
     <item>
       <title>Vue2.x响应式原理， Vue 与 React 响应式简单对比</title>
-      <link>http://sirm2z.github.io/post/vue2-responsive-data-achieve/</link>
+      <link>https://sirm2z.github.io/post/vue2-responsive-data-achieve/</link>
       <pubDate>Thu, 04 May 2017 20:22:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/vue2-responsive-data-achieve/</guid>
+      <guid>https://sirm2z.github.io/post/vue2-responsive-data-achieve/</guid>
       <description>实现的最终目标 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const demo = new Vue({ data: { text: &amp;#34;before&amp;#34;, }, // 对应的template 为 &amp;lt;div&amp;gt;&amp;lt;span&amp;gt;{{text}}&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; render(h){ return h(&amp;#39;div&amp;#39;, {}, [ h(&amp;#39;span&amp;#39;, {}, [this.__toString__(this.text)]) ]) } }) setTimeout(function(){ demo.text = &amp;#34;after&amp;#34; }, 3000) 对应的虚拟DOM</description>
     </item>
     
     <item>
       <title>命令行常用命令</title>
-      <link>http://sirm2z.github.io/post/cmd-common-use-commond/</link>
+      <link>https://sirm2z.github.io/post/cmd-common-use-commond/</link>
       <pubDate>Mon, 27 Mar 2017 22:44:42 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/cmd-common-use-commond/</guid>
+      <guid>https://sirm2z.github.io/post/cmd-common-use-commond/</guid>
       <description>npm加速 &amp;ndash;registry=http://registry.npm.taobao.org git git --version查看版本号 git config --global user.username &amp;lt;USerNamE&amp;gt; 告诉Git你的GitHub账号 git config --global user.name &amp;quot;&amp;lt;Your Name&amp;gt;&amp;quot; 设定名字 git config --global user.email &amp;quot;&amp;lt;youremail@example.com&amp;gt;&amp;quot; 设定电子邮箱 git init 把当前文件</description>
     </item>
     
     <item>
       <title>Javascript 原型链小结</title>
-      <link>http://sirm2z.github.io/post/js-prototype-chain/</link>
+      <link>https://sirm2z.github.io/post/js-prototype-chain/</link>
       <pubDate>Mon, 06 Mar 2017 18:08:27 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/js-prototype-chain/</guid>
+      <guid>https://sirm2z.github.io/post/js-prototype-chain/</guid>
       <description>更新（2018-04-15） 原型链理解：每个函数对象都含有一个原型对象，当访问某个对象的属性时，会先从自身属性查找（函数对象则从自身的原型对</description>
     </item>
     
     <item>
       <title>Ubuntu 安装及配置</title>
-      <link>http://sirm2z.github.io/post/ubuntu-install-notes/</link>
+      <link>https://sirm2z.github.io/post/ubuntu-install-notes/</link>
       <pubDate>Tue, 24 Jan 2017 20:22:04 +5200</pubDate>
       
-      <guid>http://sirm2z.github.io/post/ubuntu-install-notes/</guid>
+      <guid>https://sirm2z.github.io/post/ubuntu-install-notes/</guid>
       <description>分区 逻辑分区，200M，起始，Ext4日志文件系统，/boot；（引导分区200M足够） 逻辑分区，4000M，起始，交换空间，无挂载点；（交</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（八）-- class</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-8/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-8/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:44 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-8/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-8/</guid>
       <description>class 基本语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 //ES5 function Point(x,y){ this.x = x; this.y = y; } Point.prototype.toString = function () { return &amp;#39;(&amp;#39; + this.x + &amp;#39;, &amp;#39; + this.y + &amp;#39;)&amp;#39;; }; //ES6 class Point { //constructo</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（七）-- Generator 与 Promise</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-7/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-7/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:43 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-7/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-7/</guid>
       <description>Generator函数 执行Generator函数会返回一个遍历器对象，也就是说，Generator函数除了状态机，还是一个遍历器对象生成函数</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（六）-- set map 以及 for...of</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-6/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-6/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:42 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-6/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-6/</guid>
       <description>Set 新的数据解构，成员值是唯一的 1 2 3 4 5 6 7 8 9 10 11 12 13 14 //不能添加相同的值 var s = new Set(); [2, 3, 5, 4, 5, 2, 2].map(x =&amp;gt; s.add(x)); for (let i of s) { console.log(i); } // 2 3 5 4 //去除</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（五）-- 函数与对象</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-5/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-5/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:41 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-5/</guid>
-      <description>函数 参数的默认值 基本用法 1 2 3 4 5 6 7 function log(x, y = &amp;#39;World&amp;#39;) { console.log(x, y); } log(&amp;#39;Hello&amp;#39;) // Hello World log(&amp;#39;Hello&amp;#39;, &amp;#39;China&amp;#39;) // Hello China log(&amp;#39;Hello&amp;#39;, &amp;#39;&amp;#39;) // Hello 与解构赋值默认值结合使用 1 2 3 4 5 6 7 8 function foo({x, y = 5}) { console.log(x, y); }</description>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-5/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>ES6 学习笔记（四）-- 数值与数组</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-4/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-4/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:40 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-4/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-4/</guid>
       <description>数值的扩展 Number.isFinite(), Number.isNaN() 与传统的全局方法isFinite()和isNaN()的区别在于，传统方法先调用Number()将非数值的值转为数值，再进行判断</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（三）-- 字符串扩展</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-3/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-3/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:39 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-3/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-3/</guid>
       <description>字符串扩展 for&amp;hellip;of循环遍历字符串 1 2 3 4 5 6 7 let text = &amp;#39;abc&amp;#39; for (let i of text) { console.log(i); } //a //b //c 新增确定一个字符串是否包含在另一个字符串中，e</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（二）-- 解构赋值</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-2/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-2/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:38 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-2/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-2/</guid>
       <description>解构赋值 数组的解构赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 let [foo, [[bar], baz]] = [1, [[2], 3]]; foo // 1 bar // 2 baz // 3 let [ , , third] = [&amp;#34;foo&amp;#34;, &amp;#34;bar&amp;#34;, &amp;#34;baz&amp;#34;]; third // &amp;#34;baz&amp;#34; let [x, , y] = [1, 2, 3]; x //</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（一）-- let const</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-1/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-1/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-1/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-1/</guid>
       <description>let和const命令 let和const声明的变量只在代码块内有效 1 2 3 4 5 6 7 { let a = 10; var b = 1; } a // ReferenceError: a is not defined. b // 1 不存在变量提升 变量一</description>
     </item>
     
     <item>
       <title>inline-block 的兼容性与空白间距解决方案</title>
-      <link>http://sirm2z.github.io/post/css-inline-block-solutions/</link>
+      <link>https://sirm2z.github.io/post/css-inline-block-solutions/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/css-inline-block-solutions/</guid>
-      <description></description>
+      <guid>https://sirm2z.github.io/post/css-inline-block-solutions/</guid>
+      <description>inline-block inline-block 兼容性 兼容 IE &amp;gt; 7，兼容（IE &amp;lt; 8）写法: 1 2 3 4 .father{ display:inline-block; /* 现代浏览器 +IE6、7 inline 元素 */ zoom:1; *display:inline; /* IE6、7 block 元素 */ } 或： 1 2 3 4 5 6 7 /* IE 的一</description>
     </item>
     
     <item>
       <title>Webpack 学习笔记</title>
-      <link>http://sirm2z.github.io/post/webpack-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/webpack-learn-notes/</link>
       <pubDate>Wed, 01 Jun 2016 17:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/webpack-learn-notes/</guid>
+      <guid>https://sirm2z.github.io/post/webpack-learn-notes/</guid>
       <description>webpack.config.js配置文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49</description>
     </item>
     
     <item>
       <title>Redux 学习笔记</title>
-      <link>http://sirm2z.github.io/post/redux-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/redux-learn-notes/</link>
       <pubDate>Wed, 01 Jun 2016 17:01:08 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/redux-learn-notes/</guid>
+      <guid>https://sirm2z.github.io/post/redux-learn-notes/</guid>
       <description>redux流程 view直接触发dispatch 将action发送到reducer中后，根节点上会更新props，改变全局view redux概</description>
     </item>
     
     <item>
       <title>React 学习笔记</title>
-      <link>http://sirm2z.github.io/post/react-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/react-learn-notes/</link>
       <pubDate>Wed, 01 Jun 2016 16:58:04 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/react-learn-notes/</guid>
+      <guid>https://sirm2z.github.io/post/react-learn-notes/</guid>
       <description>组件的生命周期 Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM React 为每个状态都提供了两种处理函</description>
     </item>
     
     <item>
       <title>多行文本溢出用省略号表示 Text Overflow Ellipsis</title>
-      <link>http://sirm2z.github.io/post/css-text-overflow-ellipsis/</link>
+      <link>https://sirm2z.github.io/post/css-text-overflow-ellipsis/</link>
       <pubDate>Tue, 26 Apr 2016 22:31:08 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/css-text-overflow-ellipsis/</guid>
+      <guid>https://sirm2z.github.io/post/css-text-overflow-ellipsis/</guid>
       <description>最近在做移动端的项目，遇到了多行文本溢出后用省略号表示的需求，之前一直是每次用到的时候就搜索，这次打算总结一下。 WebKit浏览器或移动端的</description>
     </item>
     
     <item>
       <title>浅析 JavaScript 原型链与原型链式继承</title>
-      <link>http://sirm2z.github.io/post/js-scope-extend/</link>
+      <link>https://sirm2z.github.io/post/js-scope-extend/</link>
       <pubDate>Sun, 10 Jan 2016 20:44:15 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/js-scope-extend/</guid>
+      <guid>https://sirm2z.github.io/post/js-scope-extend/</guid>
       <description>原型链与原型链式继承 上篇总结了下JavaScript的作用域链的问题，欢迎拍砖！[浅析JavaScript作用域链]() 继上篇总结中提出的情</description>
     </item>
     
     <item>
       <title>浅析 JavaScript 作用域链</title>
-      <link>http://sirm2z.github.io/post/js-scope-1/</link>
+      <link>https://sirm2z.github.io/post/js-scope-1/</link>
       <pubDate>Sun, 10 Jan 2016 20:40:18 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/js-scope-1/</guid>
+      <guid>https://sirm2z.github.io/post/js-scope-1/</guid>
       <description>之前看了《javascript高级程序设计》第三版，一直想想总结一下，但是由于拖延症而一推再推，今天终于开工啦，希望自己以后能够更加勤快一点</description>
     </item>
     
     <item>
       <title>GitHub 从 fork 到 pull request 之基础流程</title>
-      <link>http://sirm2z.github.io/post/github-workflow/</link>
+      <link>https://sirm2z.github.io/post/github-workflow/</link>
       <pubDate>Fri, 18 Dec 2015 22:00:55 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/github-workflow/</guid>
+      <guid>https://sirm2z.github.io/post/github-workflow/</guid>
       <description>之前接触了github，但每次使用都还要查阅一些基础用法，因此打算在此总结回顾一下。 首先来一遍从fork到pull request这个过程的基</description>
     </item>
     

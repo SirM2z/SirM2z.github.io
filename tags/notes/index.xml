@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>notes on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/tags/notes/</link>
+    <link>https://sirm2z.github.io/tags/notes/</link>
     <description>Recent content in notes on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Wed, 01 Jun 2016 20:02:37 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>inline-block 的兼容性与空白间距解决方案</title>
-      <link>http://sirm2z.github.io/post/css-inline-block-solutions/</link>
+      <link>https://sirm2z.github.io/post/css-inline-block-solutions/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/css-inline-block-solutions/</guid>
-      <description></description>
+      <guid>https://sirm2z.github.io/post/css-inline-block-solutions/</guid>
+      <description>inline-block inline-block 兼容性 兼容 IE &amp;gt; 7，兼容（IE &amp;lt; 8）写法: 1 2 3 4 .father{ display:inline-block; /* 现代浏览器 +IE6、7 inline 元素 */ zoom:1; *display:inline; /* IE6、7 block 元素 */ } 或： 1 2 3 4 5 6 7 /* IE 的一</description>
     </item>
     
   </channel>

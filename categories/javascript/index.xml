@@ -2,85 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/categories/javascript/</link>
+    <link>https://sirm2z.github.io/categories/javascript/</link>
     <description>Recent content in javascript on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Wed, 22 Nov 2017 22:57:16 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>你不知道的 JS 读书笔记（五）-- 原型[propotype]</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</link>
       <pubDate>Wed, 22 Nov 2017 22:57:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（四）-- 混合对象类</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</link>
       <pubDate>Wed, 22 Nov 2017 22:56:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</guid>
       <description>寄生继承 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 //“传统的 JavaScript 类” Vehicle function Vehicle() { this.ehgines = 1; } Vehicle.prototype.ignition = function() { console.log( &amp;#34;Turning on my engine.&amp;#34; ); }; Vehicle.prototype.drive = function() {</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（三）-- this/原型对象</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</link>
       <pubDate>Wed, 22 Nov 2017 22:55:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-3/</guid>
       <description>this 绑定规则 默认绑定 严格模式下绑定到undefined，否则绑定到全局对象 1 2 3 4 5 function foo () { console.log(this.a); } var a = 2; foo(); // 2 隐式绑定 由上下文对象调用，绑定到</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（二）-- 闭包/模块</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</link>
       <pubDate>Wed, 22 Nov 2017 22:54:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-2/</guid>
       <description>闭包的效果 1 2 3 4 5 6 7 8 9 10 11 12 13 function foo () { var a = 2; function bar () { console.log(a); } return bar; } var baz = foo() baz() // 2 循环与闭包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 for (var i = 0; i &amp;lt; 5;</description>
     </item>
     
     <item>
       <title>你不知道的 JS 读书笔记（一）-- 作用域</title>
-      <link>http://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</link>
+      <link>https://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</link>
       <pubDate>Wed, 22 Nov 2017 22:53:16 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</guid>
+      <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-1/</guid>
       <description>作用域中的 LHS,RHS 查询 var a = 2; 引擎对a的查找是LHS查询，指查询a的内存位置，并非查找其真实的值 console.log(a) 引擎对a的查找是RHS查询，指查询a的实际值，并</description>
     </item>
     
     <item>
       <title>Javascript 原型链小结</title>
-      <link>http://sirm2z.github.io/post/js-prototype-chain/</link>
+      <link>https://sirm2z.github.io/post/js-prototype-chain/</link>
       <pubDate>Mon, 06 Mar 2017 18:08:27 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/js-prototype-chain/</guid>
+      <guid>https://sirm2z.github.io/post/js-prototype-chain/</guid>
       <description>更新（2018-04-15） 原型链理解：每个函数对象都含有一个原型对象，当访问某个对象的属性时，会先从自身属性查找（函数对象则从自身的原型对</description>
     </item>
     
     <item>
       <title>浅析 JavaScript 原型链与原型链式继承</title>
-      <link>http://sirm2z.github.io/post/js-scope-extend/</link>
+      <link>https://sirm2z.github.io/post/js-scope-extend/</link>
       <pubDate>Sun, 10 Jan 2016 20:44:15 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/js-scope-extend/</guid>
+      <guid>https://sirm2z.github.io/post/js-scope-extend/</guid>
       <description>原型链与原型链式继承 上篇总结了下JavaScript的作用域链的问题，欢迎拍砖！[浅析JavaScript作用域链]() 继上篇总结中提出的情</description>
     </item>
     
     <item>
       <title>浅析 JavaScript 作用域链</title>
-      <link>http://sirm2z.github.io/post/js-scope-1/</link>
+      <link>https://sirm2z.github.io/post/js-scope-1/</link>
       <pubDate>Sun, 10 Jan 2016 20:40:18 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/js-scope-1/</guid>
+      <guid>https://sirm2z.github.io/post/js-scope-1/</guid>
       <description>之前看了《javascript高级程序设计》第三版，一直想想总结一下，但是由于拖延症而一推再推，今天终于开工啦，希望自己以后能够更加勤快一点</description>
     </item>
     

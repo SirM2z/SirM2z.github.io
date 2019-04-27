@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/categories/linux/</link>
+    <link>https://sirm2z.github.io/categories/linux/</link>
     <description>Recent content in linux on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Mon, 27 Mar 2017 22:44:42 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>命令行常用命令</title>
-      <link>http://sirm2z.github.io/post/cmd-common-use-commond/</link>
+      <link>https://sirm2z.github.io/post/cmd-common-use-commond/</link>
       <pubDate>Mon, 27 Mar 2017 22:44:42 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/cmd-common-use-commond/</guid>
+      <guid>https://sirm2z.github.io/post/cmd-common-use-commond/</guid>
       <description>npm加速 &amp;ndash;registry=http://registry.npm.taobao.org git git --version查看版本号 git config --global user.username &amp;lt;USerNamE&amp;gt; 告诉Git你的GitHub账号 git config --global user.name &amp;quot;&amp;lt;Your Name&amp;gt;&amp;quot; 设定名字 git config --global user.email &amp;quot;&amp;lt;youremail@example.com&amp;gt;&amp;quot; 设定电子邮箱 git init 把当前文件</description>
     </item>
     

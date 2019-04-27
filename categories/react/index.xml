@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>react on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/categories/react/</link>
+    <link>https://sirm2z.github.io/categories/react/</link>
     <description>Recent content in react on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Wed, 01 Jun 2016 16:58:04 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/categories/react/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/categories/react/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>React 学习笔记</title>
-      <link>http://sirm2z.github.io/post/react-learn-notes/</link>
+      <link>https://sirm2z.github.io/post/react-learn-notes/</link>
       <pubDate>Wed, 01 Jun 2016 16:58:04 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/react-learn-notes/</guid>
+      <guid>https://sirm2z.github.io/post/react-learn-notes/</guid>
       <description>组件的生命周期 Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM React 为每个状态都提供了两种处理函</description>
     </item>
     

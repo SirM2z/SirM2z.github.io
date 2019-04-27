@@ -2,85 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ES6 on Ryan&#39;s blog - A blog about front-end</title>
-    <link>http://sirm2z.github.io/tags/es6/</link>
+    <link>https://sirm2z.github.io/tags/es6/</link>
     <description>Recent content in ES6 on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>sirm2z</copyright>
     <lastBuildDate>Wed, 01 Jun 2016 20:02:44 +0800</lastBuildDate>
     
-	<atom:link href="http://sirm2z.github.io/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sirm2z.github.io/tags/es6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ES6 学习笔记（八）-- class</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-8/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-8/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:44 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-8/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-8/</guid>
       <description>class 基本语法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 //ES5 function Point(x,y){ this.x = x; this.y = y; } Point.prototype.toString = function () { return &amp;#39;(&amp;#39; + this.x + &amp;#39;, &amp;#39; + this.y + &amp;#39;)&amp;#39;; }; //ES6 class Point { //constructo</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（七）-- Generator 与 Promise</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-7/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-7/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:43 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-7/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-7/</guid>
       <description>Generator函数 执行Generator函数会返回一个遍历器对象，也就是说，Generator函数除了状态机，还是一个遍历器对象生成函数</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（六）-- set map 以及 for...of</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-6/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-6/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:42 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-6/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-6/</guid>
       <description>Set 新的数据解构，成员值是唯一的 1 2 3 4 5 6 7 8 9 10 11 12 13 14 //不能添加相同的值 var s = new Set(); [2, 3, 5, 4, 5, 2, 2].map(x =&amp;gt; s.add(x)); for (let i of s) { console.log(i); } // 2 3 5 4 //去除</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（五）-- 函数与对象</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-5/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-5/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:41 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-5/</guid>
-      <description>函数 参数的默认值 基本用法 1 2 3 4 5 6 7 function log(x, y = &amp;#39;World&amp;#39;) { console.log(x, y); } log(&amp;#39;Hello&amp;#39;) // Hello World log(&amp;#39;Hello&amp;#39;, &amp;#39;China&amp;#39;) // Hello China log(&amp;#39;Hello&amp;#39;, &amp;#39;&amp;#39;) // Hello 与解构赋值默认值结合使用 1 2 3 4 5 6 7 8 function foo({x, y = 5}) { console.log(x, y); }</description>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-5/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>ES6 学习笔记（四）-- 数值与数组</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-4/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-4/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:40 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-4/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-4/</guid>
       <description>数值的扩展 Number.isFinite(), Number.isNaN() 与传统的全局方法isFinite()和isNaN()的区别在于，传统方法先调用Number()将非数值的值转为数值，再进行判断</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（三）-- 字符串扩展</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-3/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-3/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:39 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-3/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-3/</guid>
       <description>字符串扩展 for&amp;hellip;of循环遍历字符串 1 2 3 4 5 6 7 let text = &amp;#39;abc&amp;#39; for (let i of text) { console.log(i); } //a //b //c 新增确定一个字符串是否包含在另一个字符串中，e</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（二）-- 解构赋值</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-2/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-2/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:38 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-2/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-2/</guid>
       <description>解构赋值 数组的解构赋值 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 let [foo, [[bar], baz]] = [1, [[2], 3]]; foo // 1 bar // 2 baz // 3 let [ , , third] = [&amp;#34;foo&amp;#34;, &amp;#34;bar&amp;#34;, &amp;#34;baz&amp;#34;]; third // &amp;#34;baz&amp;#34; let [x, , y] = [1, 2, 3]; x //</description>
     </item>
     
     <item>
       <title>ES6 学习笔记（一）-- let const</title>
-      <link>http://sirm2z.github.io/post/es6-learn-notes-1/</link>
+      <link>https://sirm2z.github.io/post/es6-learn-notes-1/</link>
       <pubDate>Wed, 01 Jun 2016 20:02:37 +0800</pubDate>
       
-      <guid>http://sirm2z.github.io/post/es6-learn-notes-1/</guid>
+      <guid>https://sirm2z.github.io/post/es6-learn-notes-1/</guid>
       <description>let和const命令 let和const声明的变量只在代码块内有效 1 2 3 4 5 6 7 { let a = 10; var b = 1; } a // ReferenceError: a is not defined. b // 1 不存在变量提升 变量一</description>
     </item>
     
