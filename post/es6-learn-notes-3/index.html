@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ES6 学习笔记（三）-- 字符串扩展 - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="ES6 学习笔记（三）-- 字符串扩展" /><meta name="keywords" content="ES6, 字符串扩展, learn, notes, 学习笔记" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://sirm2z.github.io/post/es6-learn-notes-3/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ES6 学习笔记（三）-- 字符串扩展" />
+<meta property="og:description" content="ES6 学习笔记（三）-- 字符串扩展" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sirm2z.github.io/post/es6-learn-notes-3/" />
+<meta property="article:published_time" content="2016-06-01T20:02:39&#43;08:00"/>
+<meta property="article:modified_time" content="2016-06-01T20:02:39&#43;08:00"/>
+
+<meta itemprop="name" content="ES6 学习笔记（三）-- 字符串扩展">
+<meta itemprop="description" content="ES6 学习笔记（三）-- 字符串扩展">
+
+
+<meta itemprop="datePublished" content="2016-06-01T20:02:39&#43;08:00" />
+<meta itemprop="dateModified" content="2016-06-01T20:02:39&#43;08:00" />
+<meta itemprop="wordCount" content="944">
+
+
+
+<meta itemprop="keywords" content="ES6,note," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ES6 学习笔记（三）-- 字符串扩展"/>
+<meta name="twitter:description" content="ES6 学习笔记（三）-- 字符串扩展"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ES6 学习笔记（三）-- 字符串扩展</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-01 </span>
+        <div class="post-category">
+            <a href="/categories/es6/"> ES6 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#字符串扩展">字符串扩展</a>
+<ul>
+<li><a href="#for-of循环遍历字符串">for&hellip;of循环遍历字符串</a></li>
+<li><a href="#新增确定一个字符串是否包含在另一个字符串中-es5中只有-indexof">新增确定一个字符串是否包含在另一个字符串中，es5中只有<code>indexOf</code></a></li>
+<li><a href="#repeat-返回一个新字符串-表示将原字符串重复n次">repeat() 返回一个新字符串，表示将原字符串重复n次</a></li>
+<li><a href="#padstart-padend-补全长度">padStart()，padEnd() 补全长度</a></li>
+<li><a href="#模板字符串">模板字符串</a></li>
+</ul></li>
+<li><a href="#es5中的常用字符串方法">ES5中的常用字符串方法</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="字符串扩展">字符串扩展</h1>
+
+<h2 id="for-of循环遍历字符串">for&hellip;of循环遍历字符串</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">text</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">of</span> <span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">//a
+</span><span class="c1">//b
+</span><span class="c1">//c
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="新增确定一个字符串是否包含在另一个字符串中-es5中只有-indexof">新增确定一个字符串是否包含在另一个字符串中，es5中只有<code>indexOf</code></h2>
+
+<ul>
+<li>includes()：返回布尔值，表示是否找到了参数字符串</li>
+<li>startsWith()：返回布尔值，表示参数字符串是否在源字符串的头部</li>
+<li>endsWith()：返回布尔值，表示参数字符串是否在源字符串的尾部</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s1">&#39;Hello world!&#39;</span><span class="p">;</span>
+
+<span class="nx">s</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">s</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">s</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span> <span class="c1">// true
+</span><span class="c1"></span>
+<span class="c1">//三个方法都支持第二个参数，表示开始搜索的位置
+</span><span class="c1"></span><span class="nx">s</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">s</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">// true  向前搜索
+</span><span class="c1"></span><span class="nx">s</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// false
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="repeat-返回一个新字符串-表示将原字符串重复n次">repeat() 返回一个新字符串，表示将原字符串重复n次</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;x&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">// &#34;xxx&#34;
+</span><span class="c1"></span><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// &#34;hellohello&#34;
+</span><span class="c1"></span><span class="s1">&#39;na&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">// &#34;&#34;
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="padstart-padend-补全长度">padStart()，padEnd() 补全长度</h2>
+
+<p>第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;x&#39;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="c1">// &#39;ababx&#39;
+</span><span class="c1"></span><span class="s1">&#39;x&#39;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="c1">// &#39;abax&#39;
+</span><span class="c1"></span>
+<span class="s1">&#39;x&#39;</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="c1">// &#39;xabab&#39;
+</span><span class="c1"></span><span class="s1">&#39;x&#39;</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="c1">// &#39;xaba&#39;
+</span><span class="c1"></span>
+<span class="c1">//原字符串的长度，等于或大于指定的最小长度，则返回原字符串
+</span><span class="c1"></span><span class="s1">&#39;xxx&#39;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="c1">// &#39;xxx&#39;
+</span><span class="c1"></span><span class="s1">&#39;xxx&#39;</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="c1">// &#39;xxx&#39;
+</span><span class="c1"></span>
+<span class="c1">//补全的字符串与原字符串，两者的长度之和超过了指定的最小长度，则会截去超出位数的补全字符串
+</span><span class="c1"></span><span class="s1">&#39;abc&#39;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;0123456789&#39;</span><span class="p">)</span><span class="c1">// &#39;0123456abc&#39;
+</span><span class="c1"></span>
+<span class="c1">//省略第二个参数，则会用空格补全长度
+</span><span class="c1"></span><span class="s1">&#39;x&#39;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">// &#39;   x&#39;
+</span><span class="c1"></span><span class="s1">&#39;x&#39;</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">// &#39;x   &#39;
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="模板字符串">模板字符串</h2>
+
+<p>传统的JavaScript语言，输出摸板通常是这样的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#result&#34;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span>
+  <span class="s2">&#34;There are &lt;b&gt;&#34;</span> <span class="o">+</span> <span class="nx">basket</span><span class="p">.</span><span class="nx">count</span> <span class="o">+</span> <span class="s2">&#34;&lt;/b&gt; &#34;</span> <span class="o">+</span>
+  <span class="s2">&#34;items in your basket, &#34;</span> <span class="o">+</span>
+  <span class="s2">&#34;&lt;em&gt;&#34;</span> <span class="o">+</span> <span class="nx">basket</span><span class="p">.</span><span class="nx">onSale</span> <span class="o">+</span>
+  <span class="s2">&#34;&lt;/em&gt; are on sale!&#34;</span>
+<span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>ES6引入了模板字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#result&#34;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="sb">`
+</span><span class="sb">  There are &lt;b&gt;</span><span class="si">${</span><span class="nx">basket</span><span class="p">.</span><span class="nx">count</span><span class="si">}</span><span class="sb">&lt;/b&gt; items
+</span><span class="sb">   in your basket, &lt;em&gt;</span><span class="si">${</span><span class="nx">basket</span><span class="p">.</span><span class="nx">onSale</span><span class="si">}</span><span class="sb">&lt;/em&gt;
+</span><span class="sb">  are on sale!
+</span><span class="sb">`</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>常用写法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 普通字符串
+</span><span class="c1"></span><span class="sb">`In JavaScript &#39;</span><span class="err">\</span><span class="sb">n&#39; is a line-feed.`</span>
+
+<span class="c1">// 多行字符串
+</span><span class="c1"></span><span class="sb">`In JavaScript this is
+</span><span class="sb"> not legal.`</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`string text line 1
+</span><span class="sb">string text line 2`</span><span class="p">);</span>
+
+<span class="c1">// 字符串中嵌入变量
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;Bob&#34;</span><span class="p">,</span> <span class="nx">time</span> <span class="o">=</span> <span class="s2">&#34;today&#34;</span><span class="p">;</span>
+<span class="sb">`Hello </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">, how are you </span><span class="si">${</span><span class="nx">time</span><span class="si">}</span><span class="sb">?`</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>模板字符串中嵌入变量，需要将变量名写在${}之中,${}可以看作javascript的运行环境，因此还可以写方法调用等js代码</p>
+
+<h1 id="es5中的常用字符串方法">ES5中的常用字符串方法</h1>
+
+<ul>
+<li><code>toUpperCase()</code>把一个字符串全部变为大写</li>
+<li><code>toLowerCase()</code>把一个字符串全部变为小写</li>
+<li><code>indexOf()</code>会搜索指定字符串出现的位置</li>
+<li><code>substring()</code>返回指定索引区间的子串</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s1">&#39;hello, world&#39;</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// 从索引0开始到5（不包括5），返回&#39;hello&#39;
+</span><span class="c1"></span><span class="nx">s</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span> <span class="c1">// 从索引7开始到结束，返回&#39;world&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><code>split()</code>把字符串分割为字符串数组</li>
+<li><code>replace()</code>替换与正则表达式匹配的子串</li>
+<li><code>search()</code>检索与正则表达式相匹配的值</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-06-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/es6/">ES6</a>
+          <a href="/tags/note/">note</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/es6-learn-notes-4/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ES6 学习笔记（四）-- 数值与数组</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/es6-learn-notes-2/">
+            <span class="next-text nav-default">ES6 学习笔记（二）-- 解构赋值</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/es6-learn-notes-3/" class="leancloud_visitors" data-flag-title="ES6 学习笔记（三）-- 字符串扩展">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">1000000</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="http://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sirm2z</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

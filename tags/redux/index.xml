@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redux on Ryan&#39;s blog - A blog about front-end</title>
+    <link>http://sirm2z.github.io/tags/redux/</link>
+    <description>Recent content in redux on Ryan&#39;s blog - A blog about front-end</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>sirm2z</copyright>
+    <lastBuildDate>Wed, 01 Jun 2016 17:01:08 +0800</lastBuildDate>
+    
+	<atom:link href="http://sirm2z.github.io/tags/redux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redux 学习笔记</title>
+      <link>http://sirm2z.github.io/post/redux-learn-notes/</link>
+      <pubDate>Wed, 01 Jun 2016 17:01:08 +0800</pubDate>
+      
+      <guid>http://sirm2z.github.io/post/redux-learn-notes/</guid>
+      <description>redux流程 view直接触发dispatch 将action发送到reducer中后，根节点上会更新props，改变全局view redux概</description>
+    </item>
+    
+  </channel>
+</rss>

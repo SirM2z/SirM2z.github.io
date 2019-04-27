@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>原型链 on Ryan&#39;s blog - A blog about front-end</title>
+    <link>http://sirm2z.github.io/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+    <description>Recent content in 原型链 on Ryan&#39;s blog - A blog about front-end</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>sirm2z</copyright>
+    <lastBuildDate>Sun, 10 Jan 2016 20:44:15 +0800</lastBuildDate>
+    
+	<atom:link href="http://sirm2z.github.io/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>浅析 JavaScript 原型链与原型链式继承</title>
+      <link>http://sirm2z.github.io/post/js-scope-extend/</link>
+      <pubDate>Sun, 10 Jan 2016 20:44:15 +0800</pubDate>
+      
+      <guid>http://sirm2z.github.io/post/js-scope-extend/</guid>
+      <description>原型链与原型链式继承 上篇总结了下JavaScript的作用域链的问题，欢迎拍砖！[浅析JavaScript作用域链]() 继上篇总结中提出的情</description>
+    </item>
+    
+  </channel>
+</rss>

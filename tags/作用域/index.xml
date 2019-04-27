@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>作用域 on Ryan&#39;s blog - A blog about front-end</title>
+    <link>http://sirm2z.github.io/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
+    <description>Recent content in 作用域 on Ryan&#39;s blog - A blog about front-end</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>sirm2z</copyright>
+    <lastBuildDate>Sun, 10 Jan 2016 20:40:18 +0800</lastBuildDate>
+    
+	<atom:link href="http://sirm2z.github.io/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>浅析 JavaScript 作用域链</title>
+      <link>http://sirm2z.github.io/post/js-scope-1/</link>
+      <pubDate>Sun, 10 Jan 2016 20:40:18 +0800</pubDate>
+      
+      <guid>http://sirm2z.github.io/post/js-scope-1/</guid>
+      <description>之前看了《javascript高级程序设计》第三版，一直想想总结一下，但是由于拖延症而一推再推，今天终于开工啦，希望自己以后能够更加勤快一点</description>
+    </item>
+    
+  </channel>
+</rss>

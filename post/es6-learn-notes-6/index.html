@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ES6 学习笔记（六）-- set map 以及 for...of - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="ES6 学习笔记（六）-- set map 数据结构 以及 for...of 遍历" /><meta name="keywords" content="ES6, set, map, for...of, learn, notes, 学习笔记" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://sirm2z.github.io/post/es6-learn-notes-6/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ES6 学习笔记（六）-- set map 以及 for...of" />
+<meta property="og:description" content="ES6 学习笔记（六）-- set map 数据结构 以及 for...of 遍历" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sirm2z.github.io/post/es6-learn-notes-6/" />
+<meta property="article:published_time" content="2016-06-01T20:02:42&#43;08:00"/>
+<meta property="article:modified_time" content="2016-06-01T20:02:42&#43;08:00"/>
+
+<meta itemprop="name" content="ES6 学习笔记（六）-- set map 以及 for...of">
+<meta itemprop="description" content="ES6 学习笔记（六）-- set map 数据结构 以及 for...of 遍历">
+
+
+<meta itemprop="datePublished" content="2016-06-01T20:02:42&#43;08:00" />
+<meta itemprop="dateModified" content="2016-06-01T20:02:42&#43;08:00" />
+<meta itemprop="wordCount" content="960">
+
+
+
+<meta itemprop="keywords" content="ES6,note," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ES6 学习笔记（六）-- set map 以及 for...of"/>
+<meta name="twitter:description" content="ES6 学习笔记（六）-- set map 数据结构 以及 for...of 遍历"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ES6 学习笔记（六）-- set map 以及 for...of</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-01 </span>
+        <div class="post-category">
+            <a href="/categories/es6/"> ES6 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#set">Set</a>
+<ul>
+<li><a href="#set实例的属性和方法">Set实例的属性和方法</a></li>
+</ul></li>
+<li><a href="#map">Map</a></li>
+<li><a href="#for-of遍历">for&hellip;of遍历</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="set">Set</h1>
+
+<p>新的数据解构，成员值是唯一的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//不能添加相同的值
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">();</span>
+
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">of</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 2 3 5 4
+</span><span class="c1"></span>
+<span class="c1">//去除相同的值
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">set</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
+<span class="p">[...</span><span class="nx">set</span><span class="p">]</span>
+<span class="c1">// [1, 2, 3, 4]
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="set实例的属性和方法">Set实例的属性和方法</h2>
+
+<p>实例的属性</p>
+
+<ul>
+<li><code>Set.prototype.constructor</code>：构造函数，默认就是<code>Set</code>函数</li>
+<li><code>Set.prototype.size</code>：返回<code>Set</code>实例的成员总数</li>
+</ul>
+
+<p>实例的方法:</p>
+
+<ol>
+<li><p>操作方法</p>
+
+<ul>
+<li><code>add(value)</code>：添加某个值，返回Set结构本身。</li>
+<li><code>delete(value)</code>：删除某个值，返回一个布尔值，表示删除是否成功。</li>
+<li><code>has(value)</code>：返回一个布尔值，表示该值是否为Set的成员。</li>
+<li><code>clear()</code>：清除所有成员，没有返回值
+<br /></li>
+</ul></li>
+
+<li><p>遍历方法</p>
+
+<ul>
+<li><code>keys()</code>：返回一个键名的遍历器</li>
+<li><code>values()</code>：返回一个键值的遍历器</li>
+<li><code>entries()</code>：返回一个键值对的遍历器</li>
+<li><code>forEach()</code>：使用回调函数遍历每个成员</li>
+</ul></li>
+</ol>
+
+<h1 id="map">Map</h1>
+
+<p>JavaScript的对象（Object），本质上是键值对的集合（Hash结构），但是只能用字符串当作键</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span><span class="nx">p</span><span class="o">:</span> <span class="s2">&#34;Hello World&#34;</span><span class="p">};</span>
+
+<span class="nx">m</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">)</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="c1">// &#34;content&#34;
+</span><span class="c1"></span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">m</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">m</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="c1">// false
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>实例的属性</p>
+
+<ul>
+<li><code>size</code>属性返回Map结构的成员总数</li>
+</ul>
+
+<p>实例的方法</p>
+
+<ol>
+<li><p>操作方式</p>
+
+<ul>
+<li><code>set(key, value)</code>：设置key所对应的键值，然后返回整个Map结构(本身)</li>
+<li><code>get(key)</code>：读取key对应的键值</li>
+<li><code>has(key)</code>：返回一个布尔值，表示某个键是否在Map数据结构中</li>
+<li><code>delete(key)</code>：删除某个键，返回布尔值</li>
+<li><code>clear()</code>：清除所有成员，没有返回值</li>
+</ul></li>
+
+<li><p>遍历方法</p>
+
+<ul>
+<li><code>keys()</code>：返回键名的遍历器</li>
+<li><code>values()</code>：返回键值的遍历器</li>
+<li><code>entries()</code>：返回所有成员的遍历器</li>
+<li><code>forEach()</code>：遍历Map的所有成员
+<br /></li>
+</ul></li>
+</ol>
+
+<h1 id="for-of遍历">for&hellip;of遍历</h1>
+
+<p>适用范围：数组、Set和Map结构、某些类似数组的对象（比如arguments对象、DOM NodeList对象）、Generator对象，以及字符串</p>
+
+<p>与其他遍历语法比较</p>
+
+<ul>
+<li>for循环：写法麻烦</li>
+<li>forEach循环：无法中途跳出</li>
+<li>for&hellip;in
+
+<ol>
+<li>数组的键名是数字，但是for&hellip;in循环是以字符串作为键名“0”、“1”、“2”</li>
+<li>for&hellip;in循环不仅遍历数字键名，还会遍历手动添加的其他键，甚至包括原型链上的键</li>
+<li>某些情况下，for&hellip;in循环会以任意顺序遍历键名</li>
+</ol></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-06-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/es6/">ES6</a>
+          <a href="/tags/note/">note</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/es6-learn-notes-7/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ES6 学习笔记（七）-- Generator 与 Promise</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/es6-learn-notes-5/">
+            <span class="next-text nav-default">ES6 学习笔记（五）-- 函数与对象</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/es6-learn-notes-6/" class="leancloud_visitors" data-flag-title="ES6 学习笔记（六）-- set map 以及 for...of">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">1000000</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="http://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sirm2z</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

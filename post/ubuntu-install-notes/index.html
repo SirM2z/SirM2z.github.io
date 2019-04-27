@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ubuntu 安装及配置 - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="Ubuntu 安装及配置" /><meta name="keywords" content="Ubuntu, linux, install, notes, 安装及配置" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://sirm2z.github.io/post/ubuntu-install-notes/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Ubuntu 安装及配置" />
+<meta property="og:description" content="Ubuntu 安装及配置" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sirm2z.github.io/post/ubuntu-install-notes/" />
+<meta property="article:published_time" content="2017-01-24T20:22:04&#43;52:00"/>
+<meta property="article:modified_time" content="2017-01-24T20:22:04&#43;52:00"/>
+
+<meta itemprop="name" content="Ubuntu 安装及配置">
+<meta itemprop="description" content="Ubuntu 安装及配置">
+
+
+<meta itemprop="datePublished" content="2017-01-24T20:22:04&#43;52:00" />
+<meta itemprop="dateModified" content="2017-01-24T20:22:04&#43;52:00" />
+<meta itemprop="wordCount" content="1132">
+
+
+
+<meta itemprop="keywords" content="Ubuntu,note," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu 安装及配置"/>
+<meta name="twitter:description" content="Ubuntu 安装及配置"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ubuntu 安装及配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-01-24 </span>
+        <div class="post-category">
+            <a href="/categories/ubuntu/"> Ubuntu </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#分区">分区</a></li>
+<li><a href="#科学上网">科学上网</a>
+<ul>
+<li>
+<ul>
+<li><a href="#安装shadowsocks-qt5-github地址">安装shadowsocks-qt5，github地址</a></li>
+<li><a href="#安装genpac生成智能翻墙列表">安装genpac生成智能翻墙列表</a></li>
+<li><a href="#设置智能代理">设置智能代理</a></li>
+<li><a href="#图标">图标：</a></li>
+</ul></li>
+<li><a href="#字体">字体</a>
+<ul>
+<li><a href="#网易云音乐">网易云音乐</a></li>
+<li><a href="#启动栏-docky">启动栏:Docky</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="分区">分区</h1>
+
+<ul>
+<li>逻辑分区，200M，起始，Ext4日志文件系统，/boot；（引导分区200M足够）</li>
+<li>逻辑分区，4000M，起始，交换空间，无挂载点；（交换分区swap，一般不大于物理内存）</li>
+<li>逻辑分区，15000M，起始，Ext4日志文件系统，/；（系统分区”/”或称作”/root”装系统和软件，15G以上足够）</li>
+<li>逻辑分区，剩余空间数，起始，Ext4日志文件系统，/home；（home分区存放个人文档）</li>
+<li>分区设置好后，查看/boot分区的编号，然后在下边的“安装启动引导区的设备”下拉框中选择/boot分区的编号，点击安装。一直到你安装成功，当然中途需要你设置一个用户名和密码的（这个就不说了吧）</li>
+</ul>
+
+<h1 id="科学上网">科学上网</h1>
+
+<h3 id="安装shadowsocks-qt5-github地址">安装shadowsocks-qt5，github地址</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo add-apt-repository ppa:hzwhuang/ss-qt5
+sudo apt-get update
+sudo apt-get install shadowsocks-qt5</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="安装genpac生成智能翻墙列表">安装genpac生成智能翻墙列表</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 安装pip</span>
+sudo apt-get install python-pip
+<span class="c1"># 安装genpac</span>
+pip install genpac
+pip install --upgrade genpac
+pip uninstall genpac
+genpac -p <span class="s2">&#34;SOCKS5 127.0.0.1:1080&#34;</span> --gfwlist-proxy<span class="o">=</span><span class="s2">&#34;SOCKS5 127.0.0.1:1080&#34;</span> --output<span class="o">=</span><span class="s2">&#34;autoproxy.pac&#34;</span> --gfwlist-url<span class="o">=</span><span class="s2">&#34;https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt&#34;</span> --user-rule-from<span class="o">=</span><span class="s2">&#34;user-rules.txt&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="设置智能代理">设置智能代理</h3>
+
+<ul>
+<li>进入代理设置 System settings &gt; Network &gt; Network Proxy</li>
+<li>设置Method为Automatic</li>
+<li>设置Configuration URL为autoproxy.pac文件的路径</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-#例如 file:///home/用户名/Documents/autoproxy.pac```" data-lang="#例如 file:///home/用户名/Documents/autoproxy.pac```"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-#例如 file:///home/用户名/Documents/autoproxy.pac```" data-lang="#例如 file:///home/用户名/Documents/autoproxy.pac```"># 系统清理
+
+## 卸载libreOffice
+
+```sudo apt-get remove libreoffice-common```
+
+##  删除Amazon的链接
+
+```sudo apt-get remove unity-webapps-common ```
+
+# 系统美化
+
+## unity-tweak-tool
+
+```sudo apt-get install unity-tweak-tool```
+
+## Flatabulous主题
+
+### 主题：
+```shell
+sudo add-apt-repository ppa:noobslab/themes
+sudo apt-get update
+sudo apt-get install flatabulous-theme</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="图标">图标：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install ultra-flat-icons
+
+sudo apt-add-repository ppa:numix/ppa
+sudo apt-get update
+udo apt-get install numix-icon-theme-circle</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="字体">字体</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Monaco```字体下载：[官方下载](https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.ttf)" data-lang="Monaco```字体下载：[官方下载](https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.ttf)"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Monaco```字体下载：[官方下载](https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.ttf)" data-lang="Monaco```字体下载：[官方下载](https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.ttf)">```文泉驿微米黑```字体下载：[官方下载](http://sourceforge.net/projects/wqy/files/wqy-microhei/0.2.0-beta/wqy-microhei-0.2.0-beta.tar.gz/download)
+
+命令行安装：```sudo apt-get install fonts-wqy-microhei```
+
+- 双击字体文件安装
+
+## 工具安装
+
+### uget+aria2
+
+uget安装：
+```shell
+sudo add-apt-repository ppa:plushuang-tw/uget-stable
+sudo apt-get update
+sudo apt-get sudo apt-get update</code></pre></td></tr></table>
+</div>
+</div>
+<p>aria2安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sudo apt-get install aria2```" data-lang="sudo apt-get install aria2```"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sudo apt-get install aria2```" data-lang="sudo apt-get install aria2```">### vscode
+
+官网下载
+
+### oh-my-zsh
+
+github [地址](https://github.com/robbyrussell/oh-my-zsh)
+
+### terminator终端
+
+安装：```sudo apt-get install terminator```
+
+配置：```vim ~/.config/terminator/config```
+
+主题：github [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
+
+### chrome
+
+[chrome官网](https://www.google.com/chrome/browser/desktop/index.html)
+
+### git安装
+
+```sudo apt-get install git```
+
+### 压缩软件RAR
+
+```sudo apt-get install rar```
+
+### wps
+
+官网下载
+
+### dropbox
+
+官网下载deb包
+```shell
+sudo apt-get install proxychains
+sudo vi /etc/proxychains.conf //修改 socks4 127.0.0.1 9050 为 socks5 127.0.0.1 1080
+proxychains dropbox start -i</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="网易云音乐">网易云音乐</h3>
+
+<p>官网下载</p>
+
+<h3 id="启动栏-docky">启动栏:Docky</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sudo apt-get install docky  ```" data-lang="sudo apt-get install docky  ```"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sudo apt-get install docky  ```" data-lang="sudo apt-get install docky  ```">### wine安装
+
+```shell
+sudo dpkg --add-architecture i386
+sudo add-apt-repository ppa:wine/wine-builds
+sudo apt-get update
+sudo apt-get install --install-recommends winehq-devel
+sudo winecfg
+winecfg </code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-01-24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ubuntu/">Ubuntu</a>
+          <a href="/tags/note/">note</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/js-prototype-chain/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Javascript 原型链小结</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/es6-learn-notes-8/">
+            <span class="next-text nav-default">ES6 学习笔记（八）-- class</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/ubuntu-install-notes/" class="leancloud_visitors" data-flag-title="Ubuntu 安装及配置">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">1000000</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="http://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sirm2z</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

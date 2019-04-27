@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>你不知道的 JS 读书笔记（三）-- this/原型对象 - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="你不知道的 JS 读书笔记（三）-- this/原型对象" /><meta name="keywords" content="javascript, you-dont-know-js, 你不知道的JS, notes, 读书笔记, this, 原型对象" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://sirm2z.github.io/post/you-dont-know-js-read-notes-3/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="你不知道的 JS 读书笔记（三）-- this/原型对象" />
+<meta property="og:description" content="你不知道的 JS 读书笔记（三）-- this/原型对象" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sirm2z.github.io/post/you-dont-know-js-read-notes-3/" />
+<meta property="article:published_time" content="2017-11-22T22:55:16&#43;08:00"/>
+<meta property="article:modified_time" content="2017-11-22T22:55:16&#43;08:00"/>
+
+<meta itemprop="name" content="你不知道的 JS 读书笔记（三）-- this/原型对象">
+<meta itemprop="description" content="你不知道的 JS 读书笔记（三）-- this/原型对象">
+
+
+<meta itemprop="datePublished" content="2017-11-22T22:55:16&#43;08:00" />
+<meta itemprop="dateModified" content="2017-11-22T22:55:16&#43;08:00" />
+<meta itemprop="wordCount" content="952">
+
+
+
+<meta itemprop="keywords" content="javascript,note," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="你不知道的 JS 读书笔记（三）-- this/原型对象"/>
+<meta name="twitter:description" content="你不知道的 JS 读书笔记（三）-- this/原型对象"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">你不知道的 JS 读书笔记（三）-- this/原型对象</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-11-22 </span>
+        <div class="post-category">
+            <a href="/categories/javascript/"> javascript </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#this-绑定规则">this 绑定规则</a>
+<ul>
+<li><a href="#默认绑定">默认绑定</a></li>
+<li><a href="#隐式绑定">隐式绑定</a></li>
+<li><a href="#显式绑定-apply-call-硬绑定-bind">显式绑定：apply,call.硬绑定：bind</a></li>
+<li><a href="#new-绑定">new 绑定</a></li>
+</ul></li>
+<li><a href="#优先级">优先级</a></li>
+<li><a href="#tip">tip</a></li>
+<li><a href="#基本类型">基本类型</a></li>
+<li><a href="#内置对象">内置对象</a></li>
+<li><a href="#复制对象">复制对象</a></li>
+<li><a href="#属性描述符">属性描述符</a></li>
+<li><a href="#get-set">get set</a></li>
+<li><a href="#存在性">存在性</a></li>
+<li><a href="#遍历">遍历</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="this-绑定规则">this 绑定规则</h2>
+
+<h3 id="默认绑定">默认绑定</h3>
+
+<p>严格模式下绑定到undefined，否则绑定到全局对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">// 2
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="隐式绑定">隐式绑定</h3>
+
+<p>由上下文对象调用，绑定到该上下文对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">a</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nx">foo</span><span class="o">:</span> <span class="nx">foo</span>
+<span class="p">};</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">foo</span><span class="p">()</span> <span class="c1">// 2
+</span><span class="c1"></span>
+<span class="c1">// 隐式丢失----
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&#34;oops, global&#34;</span><span class="p">;</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">foo</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1">// &#34;oops, global&#34;
+</span><span class="c1"></span>
+<span class="c1">// 隐式赋值，丢失上下文
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="显式绑定-apply-call-硬绑定-bind">显式绑定：apply,call.硬绑定：bind</h3>
+
+<h3 id="new-绑定">new 绑定</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bar</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 2
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="优先级">优先级</h2>
+
+<p>new 绑定 &gt; 显式绑定(apply,call),硬绑定(bind) &gt; 隐式绑定 &gt; 默认绑定</p>
+
+<h2 id="tip">tip</h2>
+
+<p><code>Object.create(null)</code> 类似 <code>{}</code>，但是前者不会创建 <code>Object.prototype</code> 这个委托，所以它比 <code>{}</code>“更空”</p>
+
+<blockquote>
+<p>意义：<code>Object.create(null)</code> 用法更安全，<code>Object.create</code> 会创建一个新的空对象，并把新对象内部的 <code>[[Prototype]]</code> 关联到你指定的对象，这里就导致新对象的 <code>Object.prototype</code> 为 <code>null</code>。那么任何对于 <code>this</code>  的使用都会被限制在这个空对象中，不会对全局对象（整条原型链）产生任何影响</p>
+</blockquote>
+
+<p>ES6 中的箭头函数不会使用四条标准的绑定规则，而是根据当前的词法作用域来决定 this，和 <code>self = this</code> 机制一样</p>
+
+<h2 id="基本类型">基本类型</h2>
+
+<p><code>string number boolean null undefined</code></p>
+
+<h2 id="内置对象">内置对象</h2>
+
+<p><code>String Number Boolean Object Function Array Date RegExp Error</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">strPrimitive</span> <span class="o">=</span> <span class="s2">&#34;I am a string&#34;</span><span class="p">;</span>
+<span class="k">typeof</span> <span class="nx">strPrimitive</span><span class="p">;</span> <span class="c1">// &#34;string&#34;
+</span><span class="c1"></span><span class="nx">strPrimitive</span> <span class="k">instanceof</span> <span class="nb">String</span><span class="p">;</span> <span class="c1">// false
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">strObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span> <span class="s2">&#34;I am a string&#34;</span> <span class="p">);</span>
+<span class="k">typeof</span> <span class="nx">strObject</span><span class="p">;</span> <span class="c1">// &#34;object&#34;
+</span><span class="c1"></span><span class="nx">strObject</span> <span class="k">instanceof</span> <span class="nb">String</span><span class="p">;</span> <span class="c1">// true
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="复制对象">复制对象</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// someObj 需要可以被序列化为一个 JSON 字符串并且可以根据这个字符串解析出一个结构和值完全一样的对象
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span> <span class="nx">someObj</span> <span class="p">)</span> <span class="p">);</span>
+
+<span class="c1">// Object.assign(..) 属于浅复制，遍历键名，并赋值
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="属性描述符">属性描述符</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 查看属性描述符信息
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span><span class="o">:</span><span class="mi">2</span> <span class="p">};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span> <span class="nx">myObject</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span> <span class="p">);</span>
+<span class="c1">// {
+</span><span class="c1">// value: 2,
+</span><span class="c1">// writable: true,
+</span><span class="c1">// enumerable: true,
+</span><span class="c1">// confgurable: true
+</span><span class="c1">// }
+</span><span class="c1"></span>
+<span class="c1">// 设置属性描述符
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span> <span class="nx">myObject</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nx">writable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 是否可以修改属性的值
+</span><span class="c1"></span>  <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 属性是否可配置，改为false是单向操作
+</span><span class="c1"></span>  <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// 是否可枚举，如：for..in,forEach等
+</span><span class="c1"></span><span class="p">});</span>
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// 2
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="get-set">get set</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// 给 a 定义一个 getter
+</span><span class="c1"></span>  <span class="nx">get</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_a_</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="c1">// 给 a 定义一个 setter
+</span><span class="c1"></span>  <span class="nx">set</span> <span class="nx">a</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_a_</span> <span class="o">=</span> <span class="nx">val</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// 4
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="存在性">存在性</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span><span class="o">:</span><span class="mi">2</span> <span class="p">};</span>
+<span class="p">(</span><span class="s2">&#34;a&#34;</span> <span class="k">in</span> <span class="nx">myObject</span><span class="p">);</span> <span class="c1">// true
+</span><span class="c1"></span><span class="p">(</span><span class="s2">&#34;b&#34;</span> <span class="k">in</span> <span class="nx">myObject</span><span class="p">);</span> <span class="c1">// false
+</span><span class="c1"></span><span class="nx">myObject</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span> <span class="s2">&#34;a&#34;</span> <span class="p">);</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">myObject</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span> <span class="s2">&#34;b&#34;</span> <span class="p">);</span> <span class="c1">// false
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>in</code> 操作符会检查属性是否在对象及其 <code>[[Prototype]]</code> 原型链中。 相比之下，<code>hasOwnProperty(..)</code> 只会检查属性是否在 <code>myObject</code> 对象中， 不会检查 <code>[[Prototype]]</code> 链。</p>
+
+<h2 id="遍历">遍历</h2>
+
+<p><code>for..in</code> 循环可以用来遍历对象的可枚举属性列表（包括 <code>[[Prototype]]</code> 链）</p>
+
+<p>ES6 增加了一种用来遍历数组的 <code>for..of</code> 循环语法（如果对象本身定义了迭代器的话也可以遍历对象）</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-11-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/javascript/">javascript</a>
+          <a href="/tags/note/">note</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/you-dont-know-js-read-notes-4/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">你不知道的 JS 读书笔记（四）-- 混合对象类</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/you-dont-know-js-read-notes-2/">
+            <span class="next-text nav-default">你不知道的 JS 读书笔记（二）-- 闭包/模块</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/you-dont-know-js-read-notes-3/" class="leancloud_visitors" data-flag-title="你不知道的 JS 读书笔记（三）-- this/原型对象">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">1000000</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="http://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sirm2z</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

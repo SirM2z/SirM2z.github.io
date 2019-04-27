@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>命令行常用命令 - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="命令行常用命令" /><meta name="keywords" content="commond, 常用命令, cmd, linux, git" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://sirm2z.github.io/post/cmd-common-use-commond/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="命令行常用命令" />
+<meta property="og:description" content="命令行常用命令" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sirm2z.github.io/post/cmd-common-use-commond/" />
+<meta property="article:published_time" content="2017-03-27T22:44:42&#43;08:00"/>
+<meta property="article:modified_time" content="2017-03-27T22:44:42&#43;08:00"/>
+
+<meta itemprop="name" content="命令行常用命令">
+<meta itemprop="description" content="命令行常用命令">
+
+
+<meta itemprop="datePublished" content="2017-03-27T22:44:42&#43;08:00" />
+<meta itemprop="dateModified" content="2017-03-27T22:44:42&#43;08:00" />
+<meta itemprop="wordCount" content="2443">
+
+
+
+<meta itemprop="keywords" content="commond," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="命令行常用命令"/>
+<meta name="twitter:description" content="命令行常用命令"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">命令行常用命令</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-03-27 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#npm加速">npm加速</a></li>
+<li><a href="#git">git</a></li>
+<li><a href="#tsd命令">tsd命令</a></li>
+<li><a href="#webstom快捷键">webstom快捷键</a>
+<ul>
+<li><a href="#查找-代替">查找/代替</a></li>
+<li><a href="#界面操作">界面操作</a></li>
+<li><a href="#代码编辑">代码编辑</a></li>
+</ul></li>
+<li><a href="#vs2012快捷键">vs2012快捷键</a></li>
+<li><a href="#sublime命令">sublime命令</a></li>
+<li><a href="#sublime快捷键">sublime快捷键</a>
+<ul>
+<li><a href="#通用">通用</a></li>
+<li><a href="#编辑">编辑</a></li>
+<li><a href="#选择">选择</a></li>
+<li><a href="#查找-替换">查找&amp;替换</a></li>
+<li><a href="#跳转">跳转</a></li>
+<li><a href="#窗口">窗口</a></li>
+<li><a href="#屏幕">屏幕</a></li>
+</ul></li>
+<li><a href="#cmd命令">cmd命令</a></li>
+<li><a href="#cocos命令">cocos命令</a></li>
+<li><a href="#windows密钥">windows密钥</a>
+<ul>
+<li><a href="#查看">查看</a></li>
+</ul></li>
+<li><a href="#常用dns">常用DNS</a></li>
+<li><a href="#锁定屏幕">锁定屏幕</a></li>
+<li><a href="#笔记本设置无线">笔记本设置无线</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<hr />
+
+<h2 id="npm加速">npm加速</h2>
+
+<ul>
+<li>&ndash;registry=<a href="http://registry.npm.taobao.org">http://registry.npm.taobao.org</a></li>
+</ul>
+
+<hr />
+
+<h2 id="git">git</h2>
+
+<ul>
+<li><code>git --version</code>查看版本号</li>
+<li><code>git config --global user.username &lt;USerNamE&gt;</code> 告诉Git你的GitHub账号</li>
+<li><code>git config --global user.name &quot;&lt;Your Name&gt;&quot;</code> 设定名字</li>
+<li><code>git config --global user.email &quot;&lt;youremail@example.com&gt;&quot;</code> 设定电子邮箱</li>
+<li><code>git init</code> 把当前文件夹设定成一个Git 专案文件夹</li>
+<li><code>git diff</code> 查看对档案的修改</li>
+<li><code>git status</code> 检查你的 仓库repository 的 现况status，看看是否存在任何修改</li>
+<li><code>git add &lt;FILENAME&gt;</code> 准备 提交 commit 对于一个档案的修改</li>
+<li><code>git add -A</code> 加上-A，会将新增档案跟删除档案的动作一起记录下来</li>
+<li><code>git add .</code> 准备 提交 commit 对于所有档案的修改</li>
+<li><code>git commit -m &quot;&lt;your commit message&gt;&quot;</code> commit(或储存）您所准备好的修改并附上一个简短的异动说明</li>
+<li><code>git remote add &lt;REMOTENAME&gt; &lt;URL&gt;</code> 新增 远端 remote 连结</li>
+<li><code>git remote set-url &lt;REMOTENAME&gt;</code> 帮一个 远端 remote 设定位址</li>
+<li><code>git remote -v</code> 检视 远端 remote 连结</li>
+<li><code>git pull &lt;REMOTENAME&gt; &lt;BRANCHNAME&gt;</code> 收取 Pull 远端 remote 的程式</li>
+<li><code>git push &lt;REMOTENAME&gt;</code> 推送 Push 电脑上的程式到 远端 remote</li>
+<li><code>git push &lt;REMOTENAME&gt; --delete &lt;BRANCHNAME&gt;</code> 刪除 远端remote 分支branch</li>
+<li><code>git clone &lt;URLFROMGITHUB&gt;</code> 下载 程式库 repository</li>
+<li><code>git branch</code> 列出所有的 分支 branches</li>
+<li><code>git branch &lt;BRANCHNAME&gt;</code> 新增 分支 branch</li>
+<li><code>git branch -M &lt;NEWBRANCHNAME&gt;</code> 重新命名目前所在的 分支 branch</li>
+<li><code>git branch -d &lt;BRANCHNAME&gt;</code> 刪除本机的 分支branch</li>
+<li><code>git checkout &lt;BRANCHNAME&gt;</code> 切换正在工作的 分支branch</li>
+<li><code>git checkout -b &lt;BRANCHNAME&gt;</code> 新增并切换到新的 分支 branch</li>
+<li><code>git fetch --dry-run</code> 在收取更新前先检查 远端 remote 是否有变动</li>
+<li><code>git merge &lt;BRANCHNAME&gt;</code> 合并Merge 分支branch 到目前的 分支branch</li>
+</ul>
+
+<hr />
+
+<h2 id="tsd命令">tsd命令</h2>
+
+<ul>
+<li><code>tsd query node --action install</code></li>
+<li><code>tsd query express --action install</code></li>
+</ul>
+
+<hr />
+
+<h2 id="webstom快捷键">webstom快捷键</h2>
+
+<h3 id="查找-代替">查找/代替</h3>
+
+<ul>
+<li><code>ctrl+shift+N</code> (双击shift) 通过文件名快速查找工程内的文件（必记）</li>
+<li><code>ctrl+shift+alt+N</code> 通过一个字符快速查找位置（必记）</li>
+<li><code>F3</code> 查找下一个</li>
+<li><code>shift+F3</code> 查找上一个</li>
+<li><code>ctrl+F</code> 在文件内快速查找代码</li>
+<li><code>ctrl+R</code> 文件内代码替换</li>
+<li><code>ctrl+shift+R</code> 指定目录内代码批量替换</li>
+<li><code>ctrl+shift+F</code> 指定目录内代码批量查找</li>
+
+<li><p><code>shift + F6</code>可以重命名文件名，函数名，局部变量，标签名；函数名可以搜索引用的文件。</p>
+
+<h3 id="界面操作">界面操作</h3></li>
+
+<li><p><code>alt+[0-9]</code> 快速拆合功能界面模块</p></li>
+
+<li><p><code>ctrl+tab</code> 切换代码选项卡（还要进行此选择，效率差些）</p></li>
+
+<li><p><code>alt+&lt;-或-&gt;</code> 切换代码选项卡</p></li>
+
+<li><p><code>Ctrl+Up/Down</code> 代码向上/下移动</p></li>
+
+<li><p><code>Ctrl+B</code> 快速打开光标处的类或方法</p></li>
+
+<li><p><code>Ctrl+E</code> 最近打开的文件</p></li>
+
+<li><p><code>Ctrl+shift+c</code> 拷贝文件路径</p>
+
+<h3 id="代码编辑">代码编辑</h3></li>
+
+<li><p><code>Ctrl+/</code> 或 <code>Ctrl+Shift+/</code> 注释（// 或者/<em>…</em>/ ）</p></li>
+
+<li><p><code>ctrl+D</code> 复制当前行</p></li>
+
+<li><p><code>ctrl+W</code> 选中单词</p></li>
+
+<li><p><code>ctrl+z</code> 撤销</p></li>
+
+<li><p><code>ctrl+shift+z</code> 反撤销</p></li>
+
+<li><p><code>ctrl+&lt;-或-&gt;</code> 以单词作为边界跳光标位置</p></li>
+
+<li><p><code>alt+Insert</code> 新建一个文件或其他</p></li>
+
+<li><p><code>ctrl+alt+L</code> 格式化代码</p></li>
+
+<li><p><code>shift+tab/tab</code> 减少/扩大缩进（可以在代码中减少行缩进）</p></li>
+
+<li><p><code>ctrl+Y</code> 删除一行</p></li>
+
+<li><p><code>shift+enter</code> 重新开始一行（无论光标在哪个位置）</p></li>
+</ul>
+
+<hr />
+
+<h2 id="vs2012快捷键">vs2012快捷键</h2>
+
+<ul>
+<li>回到上一个光标位置：<code>Ctrl + -</code>；</li>
+<li>框式选择：<code>Shift+Alt+方向键（或鼠标）</code></li>
+<li>在当前行的上面插入空行：<code>Ctrl+Enter</code></li>
+<li>在当前行的下面插入空行：<code>Ctrl+Shift+Enter</code></li>
+<li>快速隐藏或显示当前代码段：<code>Ctrl+M,M</code></li>
+<li>快速切换窗口：<code>Ctrl+Tab</code></li>
+<li>生成解决方案：<code>Ctrl+Shift+B</code></li>
+<li>注释：<code>Ctrl+K+C</code></li>
+<li>取消注释：<code>Ctrl+K+U</code></li>
+<li>全屏显示/退出全屏显示：<code>SHIFT + ALT + ENTER</code></li>
+<li>查找所有引用：<code>Shift+F12</code></li>
+</ul>
+
+<hr />
+
+<h2 id="sublime命令">sublime命令</h2>
+
+<ul>
+<li><code>subl file</code>: 使用Sublime Text打开file文件</li>
+<li><code>subl folder</code>: 使用Sublime Text打开folder文件夹</li>
+<li><code>subl</code>: 使用Sublime Text当前文件夹</li>
+</ul>
+
+<hr />
+
+<h2 id="sublime快捷键">sublime快捷键</h2>
+
+<h3 id="通用">通用</h3>
+
+<ul>
+<li><code>↑↓←→</code>：上下左右移动光标，注意不是不是KJHL！</li>
+<li><code>Alt</code>：调出菜单</li>
+<li><code>Ctrl + Shift + P</code>：调出命令板（Command Palette）</li>
+
+<li><p><code>Ctrl +</code>`：调出控制台</p>
+
+<h3 id="编辑">编辑</h3></li>
+
+<li><p><code>Ctrl + Enter</code>：在当前行下面新增一行然后跳至该行</p></li>
+
+<li><p><code>Ctrl + Shift + Enter</code>：在当前行上面增加一行并跳至该行</p></li>
+
+<li><p><code>Ctrl + ←/→</code>：进行逐词移动</p></li>
+
+<li><p><code>Ctrl + Shift + ←/→</code>进行逐词选择</p></li>
+
+<li><p><code>Ctrl + ↑/↓</code>移动当前显示区域</p></li>
+
+<li><p><code>Ctrl + Shift + ↑/↓</code>移动当前行</p>
+
+<h3 id="选择">选择</h3></li>
+
+<li><p><code>Ctrl + D</code>：选择当前光标所在的词并高亮该词所有出现的位置，再次Ctrl + D选择该词出现的下一个位置，在多重选词的过程中，使用Ctrl + K进行跳过，使用Ctrl + U进行回退，使用Esc退出多重编辑</p></li>
+
+<li><p><code>Ctrl + Shift + L</code>：将当前选中区域打散</p></li>
+
+<li><p><code>Ctrl + J</code>：把当前选中区域合并为一行</p></li>
+
+<li><p><code>Ctrl + M</code>：在起始括号和结尾括号间切换</p></li>
+
+<li><p><code>Ctrl + Shift + M</code>：快速选择括号间的内容</p></li>
+
+<li><p><code>Ctrl + Shift + J</code>：快速选择同缩进的内容</p></li>
+
+<li><p><code>Ctrl + Shift + Space</code>：快速选择当前作用域（Scope）的内容</p>
+
+<h3 id="查找-替换">查找&amp;替换</h3></li>
+
+<li><p><code>F3</code>：跳至当前关键字下一个位置</p></li>
+
+<li><p><code>Shift + F3</code>：跳到当前关键字上一个位置</p></li>
+
+<li><p><code>Alt + F3</code>：选中当前关键字出现的所有位置</p></li>
+
+<li><p><code>Ctrl + F/H</code>：进行标准查找/替换，之后：</p></li>
+
+<li><p><code>Alt + C</code>：切换大小写敏感（Case-sensitive）模式</p></li>
+
+<li><p><code>Alt + W</code>：切换整字匹配（Whole matching）模式</p></li>
+
+<li><p><code>Alt + R</code>：切换正则匹配（Regex matching）模式</p></li>
+
+<li><p><code>Ctrl + Shift + H</code>：替换当前关键字</p></li>
+
+<li><p><code>Ctrl + Alt + Enter</code>：替换所有关键字匹配</p></li>
+
+<li><p><code>Ctrl + Shift + F</code>：多文件搜索&amp;替换</p>
+
+<h3 id="跳转">跳转</h3></li>
+
+<li><p><code>Ctrl + P</code>：跳转到指定文件，输入文件名后可以：</p></li>
+
+<li><p><code>符号跳转</code>：输入@symbol跳转到symbol符号所在的位置</p></li>
+
+<li><p><code># 关键字跳转</code>：输入#keyword跳转到keyword所在的位置</p></li>
+
+<li><p><code>: 行号跳转</code>：输入:12跳转到文件的第12行。</p></li>
+
+<li><p><code>Ctrl + R</code>：跳转到指定符号</p></li>
+
+<li><p><code>Ctrl + G</code>：跳转到指定行号</p>
+
+<h3 id="窗口">窗口</h3></li>
+
+<li><p><code>Ctrl + Shift + N</code>：创建一个新窗口</p></li>
+
+<li><p><code>Ctrl + N</code>：在当前窗口创建一个新标签</p></li>
+
+<li><p><code>Ctrl + W</code>：关闭当前标签，当窗口内没有标签时会关闭该窗口</p></li>
+
+<li><p><code>Ctrl + Shift + T</code>：恢复刚刚关闭的标签</p>
+
+<h3 id="屏幕">屏幕</h3></li>
+
+<li><p><code>F11</code>：切换普通全屏</p></li>
+
+<li><p><code>Shift + F11</code>：切换无干扰全屏</p></li>
+
+<li><p><code>Alt + Shift + 2</code>：进行左右分屏</p></li>
+
+<li><p><code>Alt + Shift + 8</code>：进行上下分屏</p></li>
+
+<li><p><code>Alt + Shift + 5</code>：进行上下左右分屏</p></li>
+
+<li><p>分屏之后，使用<code>Ctrl + 数字键</code>跳转到指定屏，使用<code>Ctrl + Shift + 数字键</code>将当前屏移动到指定屏</p></li>
+</ul>
+
+<hr />
+
+<h2 id="cmd命令">cmd命令</h2>
+
+<ul>
+<li><code>盘符+冒号</code>：进入盘</li>
+<li><code>dir</code>：文件夹里内容</li>
+<li><code>cd+文件夹名</code>：进入当前存在的文件夹</li>
+<li><code>cd</code>：返回上层目录</li>
+<li><code>mkdir</code>：创建目录</li>
+</ul>
+
+<hr />
+
+<h2 id="cocos命令">cocos命令</h2>
+
+<ul>
+<li><code>cocos new hello -l js</code>  新建项目</li>
+<li><code>cocos run -p web</code>       进入文件夹，把项目跑起来</li>
+<li><code>cocos compile -p ios|android|mac</code>  编译（android &ndash;ap19 指定版本  编译完导入eclipse就可以</li>
+<li><code>cocos compile -p ios|android -m release</code>  打包</li>
+<li><code>cocos compile -p web -m release</code>  打包到web</li>
+</ul>
+
+<hr />
+
+<h2 id="windows密钥">windows密钥</h2>
+
+<ul>
+<li><code>Retial</code>：为零售版密钥</li>
+<li><code>VOL</code>：为批量授权密钥</li>
+
+<li><p><code>OEM</code>：为预装系统密钥</p>
+
+<h3 id="查看">查看</h3></li>
+
+<li><p><code>slmgr.vbs -dli</code> 显示：操作系统版本、部分产品密钥、许可证状态</p></li>
+
+<li><p><code>slmgr.vbs -dlv</code> 显示：最为详尽的激活信息，包括：激活ID、安装ID、激活截止日期</p></li>
+
+<li><p><code>slmgr.vbs -xpr</code> 显示：是否彻底激活</p></li>
+
+<li><p><code>slmgr.vbs -ipk</code> 更换Windows 7 序列号</p></li>
+
+<li><p><code>slmgr.vbs -ato</code> 激活Windows 7</p></li>
+</ul>
+
+<hr />
+
+<h2 id="常用dns">常用DNS</h2>
+
+<ul>
+<li>114 DNS <code>114.114.114.114</code>/<code>114.114.115.115</code></li>
+<li>阿里 AliDNS <code>223.5.5.5</code>/<code>223.6.6.6</code></li>
+<li>百度 BaiduDNS <code>180.76.76.76</code></li>
+<li>DNSPod DNS+ <code>119.29.29.29</code>/<code>182.254.116.116</code></li>
+<li>CNNIC SDNS <code>1.2.4.8</code>/<code>210.2.4.8</code></li>
+<li>oneDNS <code>112.124.47.27</code>/<code>114.215.126.16</code></li>
+<li>DNS 派</li>
+<li>电信/移动/铁通 <code>101.226.4.6</code>/<code>218.30.118.6</code></li>
+<li>DNS 派 联通 <code>123.125.81.6</code>/<code>140.207.198.6</code></li>
+<li>Google DNS <code>8.8.8.8</code>/<code>8.8.4.4</code></li>
+<li>OpenDNS <code>208.67.222.222</code>/<code>208.67.220.220</code></li>
+<li>V2EX DNS <code>199.91.73.222</code>/<code>178.79.131.110</code></li>
+<li>OpenerDNS <code>42.120.21.30</code>（无添加剂）</li>
+</ul>
+
+<hr />
+
+<h2 id="锁定屏幕">锁定屏幕</h2>
+
+<ul>
+<li><code>reg delete &quot;HKEY_CLASSES_ROOT\lnkfile&quot; /v IsShortcut /f &amp; taskkill /f /im explorer.exe</code></li>
+<li><code>start explorer.exe</code></li>
+</ul>
+
+<hr />
+
+<h2 id="笔记本设置无线">笔记本设置无线</h2>
+
+<ul>
+<li><code>netsh wlan set hostednetwork mode=allow ssid=mywifi key=12345678</code></li>
+<li><code>netsh wlan start hostednetwork</code></li>
+</ul>
+
+<hr />
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-03-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/commond/">commond</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/vue2-responsive-data-achieve/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Vue2.x响应式原理， Vue 与 React 响应式简单对比</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/js-prototype-chain/">
+            <span class="next-text nav-default">Javascript 原型链小结</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/cmd-common-use-commond/" class="leancloud_visitors" data-flag-title="命令行常用命令">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">1000000</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="http://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sirm2z</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

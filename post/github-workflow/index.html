@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GitHub 从 fork 到 pull request 之基础流程 - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="GitHub 从 fork 到 pull request 之基础流程" /><meta name="keywords" content="github, pull request, frok" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://sirm2z.github.io/post/github-workflow/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GitHub 从 fork 到 pull request 之基础流程" />
+<meta property="og:description" content="GitHub 从 fork 到 pull request 之基础流程" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sirm2z.github.io/post/github-workflow/" />
+<meta property="article:published_time" content="2015-12-18T22:00:55&#43;08:00"/>
+<meta property="article:modified_time" content="2015-12-18T22:00:55&#43;08:00"/>
+
+<meta itemprop="name" content="GitHub 从 fork 到 pull request 之基础流程">
+<meta itemprop="description" content="GitHub 从 fork 到 pull request 之基础流程">
+
+
+<meta itemprop="datePublished" content="2015-12-18T22:00:55&#43;08:00" />
+<meta itemprop="dateModified" content="2015-12-18T22:00:55&#43;08:00" />
+<meta itemprop="wordCount" content="1414">
+
+
+
+<meta itemprop="keywords" content="github,pull request," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GitHub 从 fork 到 pull request 之基础流程"/>
+<meta name="twitter:description" content="GitHub 从 fork 到 pull request 之基础流程"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GitHub 从 fork 到 pull request 之基础流程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-12-18 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81/"> 工作流 </a>
+            <a href="/categories/github/"> github </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#首先来一遍从fork到pull-request这个过程的基础流程">首先来一遍从fork到pull request这个过程的基础流程</a></li>
+<li><a href="#其他常用命令">其他常用命令</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>之前接触了github，但每次使用都还要查阅一些基础用法，因此打算在此总结回顾一下。</p>
+
+<h2 id="首先来一遍从fork到pull-request这个过程的基础流程">首先来一遍从fork到pull request这个过程的基础流程</h2>
+
+<ol>
+<li><p>首先，<strong>fork 一个repository</strong>，实际上是复制了一份 repository 到自己的 GitHub 账户下，然后就可以从 GitHub 将它 clone 到你的电脑上，命令如下：</p>
+
+<ul>
+<li><code>git clone &lt;URLFROMGITHUB&gt;</code></li>
+</ul></li>
+
+<li><p><strong>连接到原始的Repository</strong>，因为如果原始的Repository内容有所改变时，我们希望能够pull这些变化，所以新增一个远端链接，并把它命名为&rsquo;upstream&rsquo;，命令如下：</p>
+
+<ul>
+<li><code>git remote add upstream &lt;URLFROMUPSTREAMGITHUB&gt;</code></li>
+</ul></li>
+
+<li><p><strong>新增branch分支，并选用新增分支</strong>。避免与主分支master造成冲突，当我们在新增分支上完成了自己的功能后再合并到主分支，命令如下：</p>
+
+<ul>
+<li><code>git branch &lt;BRANCHNAME&gt;</code></li>
+<li><code>git checkout &lt;BRANCHNAME&gt;</code></li>
+<li><code>git checkout -b &lt;BRANCHNAME&gt;</code>  &ndash;创建新的分支并切换到新的分支上</li>
+</ul></li>
+
+<li><p><strong>记录</strong>，在我们自己的分支上修改后，需要记录下来。</p>
+
+<ul>
+<li><code>git status</code> &ndash;查看当前状态</li>
+<li><code>git add -A</code> &ndash;记录修改文件，加上 -A，會將新增檔案跟刪除檔案的動作一起記錄下來</li>
+<li><code>git commit -m &quot;add a file&quot;</code> &ndash;提交全部修改</li>
+<li><code>git checkout master</code> &ndash;第二天开始工作前，切换到master分支</li>
+<li><code>git pull origin master</code> &ndash;从master的远程分支拉取代码</li>
+<li><code>git checkout &lt;BRANCHNAME&gt;</code> &ndash;切换到task所在的本地分支</li>
+<li><code>git rebase -i master</code> &ndash;将master上的最新的代码合并到当前分支上，这里的-i的作用是将我们 当前分支之前的commit压缩成为一个commit，这样做的好处在于当我们之后创建pull request并进行相应的code review的时候，代码的改动会集中在一个commit，使得code review更直观方便</li>
+<li><code>git push --set-upstream origin &lt;my branch name&gt;</code> &ndash;最后，当task的所有编码完成之后，将代码push到远程分支</li>
+</ul></li>
+
+<li><p><strong>先获取远端，再提交</strong>，每次提交代码前，都需要先获取最新代码，防止覆盖他人代码</p>
+
+<ul>
+<li><code>git fetch --dry-run</code> &ndash;检查远端是否有变动</li>
+<li><code>git pull</code> &ndash;从远端分支更新最新代码
+<br /></li>
+</ul></li>
+
+<li><p><strong>建立Pull Requests</strong>，进入你的github项目页，一般情况下 GitHub会检测到你有了新的推送，会主动提示你，点击Create pull request，写上说明，再按Send pull request就完成了，如果 Pull Request 沒有问题的话，很快就會被自动合并 merged 了哦！</p></li>
+
+<li><p><strong>本地合并分支，并删除分支</strong>，将分支合并到主分支上，并删除之</p>
+
+<ul>
+<li><code>git checkout master</code> &ndash;首先切换到主分支中</li>
+<li><code>git merge &lt;BRANCHNAME&gt;</code> &ndash;合并另一个分支进来</li>
+<li><code>git branch -d &lt;BRANCHNAME&gt;</code> &ndash;删掉刚刚合并的分支</li>
+<li><code>git push &lt;REMOTENAME&gt; --delete &lt;BRANCHNAME&gt;</code> &ndash;也可以把合并分支从GitHub上的副本repository中刪除</li>
+</ul></li>
+</ol>
+
+<hr />
+
+<h2 id="其他常用命令">其他常用命令</h2>
+
+<ul>
+<li><code>git init</code> &ndash;将一个文件夹初始化为git仓库</li>
+<li><code>git status</code> &ndash;检查当前repository中的修改</li>
+<li><code>git diff</code> &ndash;查看对文件的修改</li>
+<li><code>git add &lt;FILENAME&gt;</code> &ndash;准备提交对于一个文件的修改</li>
+<li><code>git add .</code> &ndash;准备提交对所有文件的修改</li>
+<li><code>git commit -m &quot;&lt;your commit message&gt;&quot;</code> &ndash;提交你所准备好的修改，并附上简短说明</li>
+<li><code>git config --global user.username &lt;USerNamE&gt;</code> &ndash;配置github账号</li>
+<li><code>git remote add &lt;REMOTENAME&gt;</code> &ndash;新增远端链接</li>
+<li><code>git remote set-url &lt;REMOTENAME&gt;</code> &ndash;对一个远端设定地址</li>
+<li><code>git remote add &lt;REMOTENAME&gt; &lt;URL&gt;</code> &ndash;新增带地址的远端链接</li>
+<li><code>git remote -v</code> &ndash;查看所有远端</li>
+<li><code>git pull &lt;REMOTENAME&gt; &lt;BRANCHNAME&gt;</code> &ndash;从一个远端收取更新（默认为主分支）</li>
+<li><code>git push &lt;REMOTENAME&gt; &lt;BRANCHNAME&gt;</code> &ndash;提交代码到指定远端（默认为主分支）</li>
+<li><code>git branch -M &lt;NEWBRANCHNAME&gt;</code> &ndash;修改当前分支名字</li>
+<li><code>git branch</code> &ndash;列出所有分支</li>
+<li><code>git clone &lt;URL&gt;</code> &ndash;复制repository 到自己电脑</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-12-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/github/">github</a>
+          <a href="/tags/pull-request/">pull request</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/js-scope-1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">浅析 JavaScript 作用域链</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/github-workflow/" class="leancloud_visitors" data-flag-title="GitHub 从 fork 到 pull request 之基础流程">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">1000000</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="http://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sirm2z</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

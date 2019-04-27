@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vue2.x响应式原理， Vue 与 React 响应式简单对比 - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="Vue2.x响应式原理， Vue 与 React 响应式简单对比" /><meta name="keywords" content="Vue, 响应式原理实现, Vue 与 React 响应式简单对比" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://sirm2z.github.io/post/vue2-responsive-data-achieve/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Vue2.x响应式原理， Vue 与 React 响应式简单对比" />
+<meta property="og:description" content="Vue2.x响应式原理， Vue 与 React 响应式简单对比" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sirm2z.github.io/post/vue2-responsive-data-achieve/" />
+<meta property="article:published_time" content="2017-05-04T20:22:37&#43;08:00"/>
+<meta property="article:modified_time" content="2017-05-04T20:22:37&#43;08:00"/>
+
+<meta itemprop="name" content="Vue2.x响应式原理， Vue 与 React 响应式简单对比">
+<meta itemprop="description" content="Vue2.x响应式原理， Vue 与 React 响应式简单对比">
+
+
+<meta itemprop="datePublished" content="2017-05-04T20:22:37&#43;08:00" />
+<meta itemprop="dateModified" content="2017-05-04T20:22:37&#43;08:00" />
+<meta itemprop="wordCount" content="3074">
+
+
+
+<meta itemprop="keywords" content="Vue,note," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue2.x响应式原理， Vue 与 React 响应式简单对比"/>
+<meta name="twitter:description" content="Vue2.x响应式原理， Vue 与 React 响应式简单对比"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vue2.x响应式原理， Vue 与 React 响应式简单对比</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-05-04 </span>
+        <div class="post-category">
+            <a href="/categories/vue/"> Vue </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#实现的最终目标">实现的最终目标</a></li>
+<li><a href="#第一步-监听data下边的所有属性-转换为响应式">第一步,监听data下边的所有属性，转换为响应式</a>
+<ul>
+<li><a href="#思路">思路</a></li>
+</ul></li>
+<li><a href="#第二步-解决准确度问题-引出虚拟dom">第二步，解决准确度问题，引出虚拟dom</a></li>
+<li><a href="#第三步-依赖收集-准确渲染">第三步，依赖收集，准确渲染</a></li>
+<li><a href="#vue-react响应式简单对比">vue react响应式简单对比</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="实现的最终目标">实现的最终目标</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">const</span> <span class="nx">demo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;before&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="c1">// 对应的template 为 &lt;div&gt;&lt;span&gt;{{text}}&lt;/span&gt;&lt;/div&gt;
+</span><span class="c1"></span>  <span class="nx">render</span><span class="p">(</span><span class="nx">h</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">h</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span>
+      <span class="nx">h</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">__toString__</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">)])</span>
+    <span class="p">])</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">demo</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="s2">&#34;after&#34;</span>
+<span class="p">},</span> <span class="mi">3000</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>对应的虚拟DOM会从</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>before<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> </code></pre></td></tr></table>
+</div>
+</div>
+<p>变成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>after<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="第一步-监听data下边的所有属性-转换为响应式">第一步,监听data下边的所有属性，转换为响应式</h2>
+
+<h3 id="思路">思路</h3>
+
+<ul>
+<li>当data下的某个属性变化时，如何触发相应的函数？</li>
+</ul>
+
+<p>方案：ES5中新添加了一个方法:[Object.defineProperty]()，通过这个方法，可以自定义<code>getter</code>和<code>setter</code>函数，那么在获取对象属性或者设置对象属性时就能够执行相应的回调函数</p>
+
+<p><img src="./images/object_defineProperty_mdn.png" alt="Object.defineProperty MDN" /></p>
+
+<p>代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">class</span> <span class="nx">Vue</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$options</span> <span class="o">=</span> <span class="nx">options</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_data</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">data</span>
+    <span class="nx">observer</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">_update</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_update</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="nx">_update</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$options</span><span class="p">.</span><span class="nx">render</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">observer</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">defineReactive</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">],</span> <span class="nx">cb</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">defineReactive</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">get</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;你访问了&#39;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nx">val</span>
+    <span class="p">},</span>
+    <span class="nx">set</span><span class="o">:</span> <span class="nx">newVal</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">newVal</span> <span class="o">===</span> <span class="nx">val</span><span class="p">)</span>
+        <span class="k">return</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;你设置了&#39;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;新的&#39;</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="s1">&#39; = &#39;</span> <span class="o">+</span> <span class="nx">newVal</span><span class="p">)</span>
+      <span class="nx">val</span> <span class="o">=</span> <span class="nx">newVal</span>
+      <span class="nx">cb</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">demo1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#demo&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;before&#34;</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;我要render了&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>引发了第二个问题，如果<code>data</code>中的属性是一个对象还能触发我们的回掉函数么？比如说下边的demo</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">demo2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#demo&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;before&#34;</span><span class="p">,</span>
+    <span class="nx">o</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;o-before&#34;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;我要render了&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>方案：用递归完善上边的响应式，需要在它开始对属性进行响应式转换的时候，前边加个判断，即如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">observer</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">new</span> <span class="nx">observer</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">],</span> <span class="nx">cb</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">defineReactive</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>实际写的过程中发现调用data的属性时需要这样写<code>demo._data.text</code>，肯定是没有<code>demo.text</code>这样写来的方便，所以就需要加一层代理进行转换</li>
+</ul>
+
+<p>代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js">  <span class="nx">_proxy</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">proxyGetter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">_data</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nx">set</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">proxySetter</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">_data</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">val</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>然后在构造函数中加上这么一句话</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">key</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_proxy</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>到此，我们的<code>data</code>属性已经变为响应式的了，只要<code>data</code>的属性发生变化，那么就会触发<code>render</code>函数。这也是为什么只有vue组件中的<code>data</code>属性才是响应式的，其他地方声明的值均不是响应式的原因。但是这里有个问题，即触发<code>render</code>函数的准确度问题！</p>
+
+<h2 id="第二步-解决准确度问题-引出虚拟dom">第二步，解决准确度问题，引出虚拟dom</h2>
+
+<p>比如下边的demo</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`
+</span><span class="sb">    &lt;div&gt;
+</span><span class="sb">      &lt;span&gt;name:&lt;/span&gt; {{name}}
+</span><span class="sb">    &lt;div&gt;`</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;js&#39;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">24</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">demo</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="p">},</span> <span class="mi">3000</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p><code>template</code>中只用到了<code>data</code>中的<code>name</code>属性，但是当修改<code>age</code>属性的时候，会不会触发渲染呢？答案是：会。但实际是不需要触发渲染机制的</p>
+
+<p>解决这个问题，先要简单说下虚拟dom。vue有两种写法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// template模板写法（最常用的）
+</span><span class="c1"></span><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;before&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`
+</span><span class="sb">    &lt;div&gt;
+</span><span class="sb">      &lt;span&gt;text:&lt;/span&gt; {{text}}
+</span><span class="sb">    &lt;/div&gt;`</span>
+<span class="p">})</span>
+
+<span class="c1">// render函数写法，类似react的jsx写法
+</span><span class="c1"></span><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;before&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">render</span> <span class="p">(</span><span class="nx">h</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">text</span><span class="o">:&lt;</span><span class="err">/span&gt; {{text}}</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>由于vue2.x引入了虚拟dom的原因，这两种写法最终都会被解析成虚拟dom，但在这之前，他们会先被解析函数转换成同一种表达方式，即如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;before&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">__h__</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">__h__</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">__toString__</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">)])</span>
+    <span class="p">])</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>透过上边的<code>render</code>函数中的<code>this.__h__</code>方法，可以简单了解下虚拟dom</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">VNode</span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">children</span><span class="p">,</span> <span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">tag</span><span class="o">:</span> <span class="nx">tag</span><span class="p">,</span> <span class="c1">// html标签名
+</span><span class="c1"></span>    <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span><span class="p">,</span> <span class="c1">// 包含诸如 class 和 style 这些标签上的属性
+</span><span class="c1"></span>    <span class="nx">children</span><span class="o">:</span> <span class="nx">children</span><span class="p">,</span> <span class="c1">// 子节点
+</span><span class="c1"></span>    <span class="nx">text</span><span class="o">:</span> <span class="nx">text</span> <span class="c1">// 文本节点
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>写一个简单的虚拟dom：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">VNode</span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">children</span><span class="p">,</span> <span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">tag</span><span class="o">:</span> <span class="nx">tag</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span><span class="p">,</span>
+    <span class="nx">children</span><span class="o">:</span> <span class="nx">children</span><span class="p">,</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="nx">text</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nx">Vue</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$options</span> <span class="o">=</span> <span class="nx">options</span>
+    <span class="k">const</span> <span class="nx">vdom</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_update</span><span class="p">()</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">vdom</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">_update</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_render</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">_render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="nx">vnode</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">$options</span><span class="p">.</span><span class="nx">render</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">vnode</span>
+  <span class="p">}</span>
+  <span class="nx">__h__</span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span> <span class="nx">attr</span><span class="p">,</span> <span class="nx">children</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">VNode</span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span> <span class="nx">attr</span><span class="p">,</span> <span class="nx">children</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">child</span><span class="p">)=&gt;{</span>
+      <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">child</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">VNode</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">child</span><span class="p">)</span>
+      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">return</span> <span class="nx">child</span>
+      <span class="p">}</span>
+    <span class="p">}))</span>
+  <span class="p">}</span>
+  <span class="nx">__toString__</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">val</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="s1">&#39;&#39;</span> <span class="o">:</span> <span class="k">typeof</span> <span class="nx">val</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span> <span class="o">?</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">val</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">:</span> <span class="nb">String</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">demo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#demo&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;before&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">__h__</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">__h__</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">__toString__</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">)])</span>
+    <span class="p">])</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>to do</p>
+
+<p>回头看问题，也就是说，我需要知道<code>render</code>函数中依赖了<code>data</code>中的哪些属性，只有这些属性变化，才需要去触发<code>render</code>函数</p>
+
+<h2 id="第三步-依赖收集-准确渲染">第三步，依赖收集，准确渲染</h2>
+
+<p>思路：在这之前，我们已经把<code>data</code>中的属性改成响应式了，当去获取或者修改这些变量时便能够触发相应函数。那这里就可以利用这个相应的函数做些手脚了。当声明一个vue对象时，在执行<code>render</code>函数获取虚拟dom的这个过程中，已经对<code>render</code>中依赖的<code>data</code>属性进行了一次获取操作，这次获取操作便可以拿到所有依赖。</p>
+
+<p>其实不仅是<code>render</code>，任何一个变量的改别，是因为别的变量改变引起(观察者模式)，都可以用上述方法，也就是<code>computed</code>和<code>watch</code>的原理</p>
+
+<p>首先需要写一个依赖收集的类，每一个<code>data</code>中的属性都有可能被依赖，因此每个属性在响应式转化（<code>defineReactive</code>）的时候，就初始化它。代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">class</span> <span class="nx">Dep</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subs</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="p">}</span>
+  <span class="nx">add</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subs</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">notify</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">subs</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">cb</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">cb</span><span class="p">())</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">defineReactive</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="nx">dep</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dep</span><span class="p">()</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span>
+    <span class="c1">// 省略
+</span><span class="c1"></span>  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>那么执行过程就是:
+- 当执行<code>render</code>函数的时候，依赖到的变量的<code>get</code>就会被执行，然后就把这个 <code>render</code>函数加到<code>subs</code>里面去。
+- 当<code>set</code>的时候,就执行<code>notify</code>，将所有的<code>subs</code>数组里的函数执行，其中就包含<code>render</code>的执行。</p>
+
+<blockquote>
+<p>注：代码中有一个<code>Dep.target</code>值，这个值时用来区分是普通的<code>get</code>还是收集依赖时的<code>get</code></p>
+</blockquote>
+
+<p>最后完整代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">VNode</span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">children</span><span class="p">,</span> <span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">tag</span><span class="o">:</span> <span class="nx">tag</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span><span class="p">,</span>
+    <span class="nx">children</span><span class="o">:</span> <span class="nx">children</span><span class="p">,</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="nx">text</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nx">Vue</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$options</span> <span class="o">=</span> <span class="nx">options</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_data</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">data</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">key</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_proxy</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span>
+    <span class="nx">observer</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+    <span class="k">const</span> <span class="nx">vdom</span> <span class="o">=</span> <span class="nx">watch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">_render</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">_update</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">vdom</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">_proxy</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">proxyGetter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">_data</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nx">set</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">proxySetter</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">_data</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">val</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+  <span class="nx">_update</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;我需要更新&#34;</span><span class="p">);</span>
+    <span class="k">const</span> <span class="nx">vdom</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_render</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">vdom</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">_render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$options</span><span class="p">.</span><span class="nx">render</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">__h__</span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span> <span class="nx">attr</span><span class="p">,</span> <span class="nx">children</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">VNode</span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span> <span class="nx">attr</span><span class="p">,</span> <span class="nx">children</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">child</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">child</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">VNode</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">child</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">child</span>
+      <span class="p">}</span>
+    <span class="p">}))</span>
+  <span class="p">}</span>
+  <span class="nx">__toString__</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">val</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="s1">&#39;&#39;</span> <span class="o">:</span> <span class="k">typeof</span> <span class="nx">val</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span> <span class="o">?</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">val</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">:</span> <span class="nb">String</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">observer</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">new</span> <span class="nx">observer</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="nx">defineReactive</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">defineReactive</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="nx">dep</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dep</span><span class="p">()</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">get</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">Dep</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">dep</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">Dep</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span>
+        <span class="nx">Dep</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="kc">null</span>
+      <span class="p">}</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;你访问了&#39;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nx">val</span>
+    <span class="p">},</span>
+    <span class="nx">set</span><span class="o">:</span> <span class="nx">newVal</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">newVal</span> <span class="o">===</span> <span class="nx">val</span><span class="p">)</span>
+        <span class="k">return</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;你设置了&#39;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;新的&#39;</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="s1">&#39; = &#39;</span> <span class="o">+</span> <span class="nx">newVal</span><span class="p">)</span>
+      <span class="nx">val</span> <span class="o">=</span> <span class="nx">newVal</span>
+      <span class="nx">dep</span><span class="p">.</span><span class="nx">notify</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">watch</span><span class="p">(</span><span class="nx">vm</span><span class="p">,</span> <span class="nx">exp</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">Dep</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="nx">cb</span>
+  <span class="k">return</span> <span class="nx">exp</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nx">Dep</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subs</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="p">}</span>
+  <span class="nx">add</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subs</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">notify</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">cb</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">cb</span><span class="p">())</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">Dep</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="kc">null</span>
+
+
+<span class="kd">var</span> <span class="nx">demo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#demo&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="s2">&#34;before&#34;</span><span class="p">,</span>
+    <span class="nx">test</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">a</span><span class="o">:</span> <span class="s1">&#39;1&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">t</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">__h__</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">__h__</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">__toString__</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">)]),</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">__h__</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">__toString__</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">a</span><span class="p">)])</span>
+    <span class="p">])</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="vue-react响应式简单对比">vue react响应式简单对比</h2>
+
+<p>综上发现，利用<code>Object.defineProperty</code>这个特性可以精确的写出订阅发布模式，从这点来说，<code>vue</code>是优于<code>react</code>的，在没经过优化之前，<code>vue</code>的渲染机制一定是比<code>react</code>更加准确的，为了验证这一说法，我用两个框架同时写了两个相同的简单项目进行对比。</p>
+
+<p>没有对比就没有伤害：</p>
+
+<ul>
+<li>react项目地址：<a href="http://sirm2z.github.io/react-vue-test/react/index.html">http://sirm2z.github.io/react-vue-test/react/index.html</a>
+<img src="./images/react.gif" alt="react结果" /></li>
+<li>vue项目地址：<a href="http://sirm2z.github.io/react-vue-test/vue/index.html">http://sirm2z.github.io/react-vue-test/vue/index.html</a>
+<img src="./images/vue.gif" alt="vue结果" /></li>
+</ul>
+
+<p>通过对比发现，<code>react</code>在正常使用的过程中产生了多余的渲染，在移动端或者组件嵌套非常深的情况下会产生非常大的性能消耗，因此在使用<code>react</code>的过程中，写好<code>react</code>生命周期中的<code>shouldComponentUpdate</code>是非常重要的！</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-05-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/vue/">Vue</a>
+          <a href="/tags/note/">note</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/flexbox-learn-notes/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">flexbox 深入理解</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/cmd-common-use-commond/">
+            <span class="next-text nav-default">命令行常用命令</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/vue2-responsive-data-achieve/" class="leancloud_visitors" data-flag-title="Vue2.x响应式原理， Vue 与 React 响应式简单对比">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">1000000</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="http://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sirm2z</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

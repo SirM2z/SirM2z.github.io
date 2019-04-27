@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>浅析 JavaScript 作用域链 - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="浅析 JavaScript 作用域链" /><meta name="keywords" content="js, javascript, scope, 作用域" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://sirm2z.github.io/post/js-scope-1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="浅析 JavaScript 作用域链" />
+<meta property="og:description" content="浅析 JavaScript 作用域链" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://sirm2z.github.io/post/js-scope-1/" />
+<meta property="article:published_time" content="2016-01-10T20:40:18&#43;08:00"/>
+<meta property="article:modified_time" content="2016-01-10T20:40:18&#43;08:00"/>
+
+<meta itemprop="name" content="浅析 JavaScript 作用域链">
+<meta itemprop="description" content="浅析 JavaScript 作用域链">
+
+
+<meta itemprop="datePublished" content="2016-01-10T20:40:18&#43;08:00" />
+<meta itemprop="dateModified" content="2016-01-10T20:40:18&#43;08:00" />
+<meta itemprop="wordCount" content="1048">
+
+
+
+<meta itemprop="keywords" content="javascript,scope,作用域," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅析 JavaScript 作用域链"/>
+<meta name="twitter:description" content="浅析 JavaScript 作用域链"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">浅析 JavaScript 作用域链</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-01-10 </span>
+        <div class="post-category">
+            <a href="/categories/javascript/"> javascript </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#作用域链">作用域链</a>
+<ul>
+<li><a href="#函数作用域">函数作用域</a>
+<ul>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>之前看了《javascript高级程序设计》第三版，一直想想总结一下，但是由于拖延症而一推再推，今天终于开工啦，希望自己以后能够更加勤快一点。当然都是我的个人理解，如有不对，欢迎指出。</p>
+
+<h1 id="作用域链">作用域链</h1>
+
+<p>首先总结一下作用域链的问题，说到JavaScript的作用域链，就要提一下那句老生常谈的话</p>
+
+<blockquote>
+<p>JavaScript是没有块级作用域的</p>
+</blockquote>
+
+<p>那么，javascript这门语言是如何面对变量命名以及使用的问题呢？</p>
+
+<h2 id="函数作用域">函数作用域</h2>
+
+<p>是的，JavaScript中是以函数为一个单位，它不像c那样是以‘{}’大括号为边界的。js中一个function即会生成一个作用域，最顶级的作用域也就是我们所说的全局变量所在的作用域，它在浏览器环境中就是window对象，在nodejs环境中是global对象，当我们在这层作用域用var或function声明一个变量或函数，那么这个变量或函数就会成为顶级作用域的一个属性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">a</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">//=&gt;0(浏览器环境)
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>理解了顶级作用域，然后说一下函数作用域。之前说了js是以函数为单位的，所以当我们在一个函数内声明一个变量后，那么这个变量只有在这个函数内部可以访问，它的上层作用域是访问不到的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+	<span class="kd">var</span> <span class="nx">tmp</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tmp</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">//=&gt;1
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tmp</span><span class="p">);</span> <span class="c1">//Uncaught ReferenceError: tmp is not defined
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>那么函数作用域内可以访问上层作用域的变量吗？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">tmp</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tmp</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">//=&gt;1	我们发现是可以访问到的
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>那么总结起来就是：js以函数为一个单位，并伴随函数的声明生成一个作用域挂在上层作用域上，作为它的属性，而内部作用域可以访问外部作用域的变量，但是外部作用域不能访问内部的变量。理解了函数作用域后，那么如果出现函数内的变量名与上层作用域内的变量名一样的情况的话，会是什么情况呢？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">global</span><span class="o">=</span><span class="s2">&#34;global&#34;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+	<span class="kd">var</span> <span class="nx">global</span><span class="o">=</span><span class="s2">&#34;local&#34;</span><span class="p">;</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">global</span><span class="p">)</span><span class="err">；</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">//=&gt;local
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">=&gt;</span><span class="nx">global</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>总结：我们发现，当变量名冲突时，js会以自身所在作用域内的变量为准。可以理解为，当js需要解析一个变量时，首先会在当前作用域内查找该变量，如果找到，则使用该变量，如果没有找到，则向上层作用域内查找，然后按照这个逻辑往上查找，直到查找到顶级作用域的属性上（也就是全局变量），若还未找到，则抛出异常。</p>
+
+<p>说到这里，下篇打算总结一下原型链的问题，同样都是链，但这两个链往上追朔的顶点是不一样的，而且理解了原型链之后，那么JavaScript中那些继承的问题应该也就差不多理解了。</p>
+
+<p>关于原型链的个人理解已发布，如有兴趣，请移步<a href="/post/js-scope-extend">浅析JavaScript原型链</a></p>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+<li>《JavaScript权威指南》</li>
+<li>《JavaScript高级程序设计》第三版</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-01-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/javascript/">javascript</a>
+          <a href="/tags/scope/">scope</a>
+          <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/">作用域</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/js-scope-extend/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">浅析 JavaScript 原型链与原型链式继承</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/github-workflow/">
+            <span class="next-text nav-default">GitHub 从 fork 到 pull request 之基础流程</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/js-scope-1/" class="leancloud_visitors" data-flag-title="浅析 JavaScript 作用域链">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">1000000</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="http://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sirm2z</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
