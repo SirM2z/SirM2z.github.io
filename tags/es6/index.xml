@@ -45,7 +45,7 @@
       <pubDate>Wed, 01 Jun 2016 20:02:41 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/es6-learn-notes-5/</guid>
-      <description></description>
+      <description>函数 参数的默认值 基本用法 1 2 3 4 5 6 7 function log(x, y = &amp;#39;World&amp;#39;) { console.log(x, y); } log(&amp;#39;Hello&amp;#39;) // Hello World log(&amp;#39;Hello&amp;#39;, &amp;#39;China&amp;#39;) // Hello China log(&amp;#39;Hello&amp;#39;, &amp;#39;&amp;#39;) // Hello 与解构赋值默认值结合使用 1 2 3 4 5 6 7 8 function foo({x, y = 5}) { console.log(x, y); }</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       <pubDate>Wed, 01 Jun 2016 20:02:39 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/es6-learn-notes-3/</guid>
-      <description>字符串扩展 for&amp;hellip;of循环遍历字符串 1 2 3 4 5 6 7 let text = &amp;#39;abc&amp;#39; for (let i of text) { console.log(i); } //a //b //c 新增确定一个字符串是否包含在另一个字符串中，e</description>
+      <description></description>
     </item>
     
     <item>
