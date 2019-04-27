@@ -6,7 +6,7 @@
     <description>Recent content in notes on Ryan&#39;s blog - A blog about front-end</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>sirm2z</copyright>
+    <copyright>Ryan</copyright>
     <lastBuildDate>Wed, 01 Jun 2016 20:02:37 +0800</lastBuildDate>
     
 	<atom:link href="https://sirm2z.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,7 @@
       <pubDate>Wed, 01 Jun 2016 20:02:37 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/css-inline-block-solutions/</guid>
-      <description></description>
+      <description>inline-block inline-block 兼容性 兼容 IE &amp;gt; 7，兼容（IE &amp;lt; 8）写法: 1 2 3 4 .father{ display:inline-block; /* 现代浏览器 +IE6、7 inline 元素 */ zoom:1; *display:inline; /* IE6、7 block 元素 */ } 或： 1 2 3 4 5 6 7 /* IE 的一</description>
     </item>
     
   </channel>
