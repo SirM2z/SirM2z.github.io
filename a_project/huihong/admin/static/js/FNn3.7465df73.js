@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["FNn3"],{FNn3:function(e,t,n){"use strict";n.r(t);var a={name:"Area"},l=n("KHd+"),s=Object(l.a)(a,function(e,t){var n=t._c;return n("div",{staticStyle:{padding:"30px"}},[n("el-alert",{attrs:{closable:!1,title:"小区",type:"success"}})],1)},[],!0,null,null,null);s.options.__file="area.vue";t.default=s.exports}}]);

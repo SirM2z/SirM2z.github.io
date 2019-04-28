@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ELlT"],{ELlT:function(t,e,l){"use strict";l.r(e);var i={name:"Committie"},n=l("KHd+"),s=Object(n.a)(i,function(t,e){var l=e._c;return l("div",{staticStyle:{padding:"30px"}},[l("el-alert",{attrs:{closable:!1,title:"居委",type:"success"}})],1)},[],!0,null,null,null);s.options.__file="committie.vue";e.default=s.exports}}]);

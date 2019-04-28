@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>css3 学习笔记（一） - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="css3 学习笔记（一）" /><meta name="keywords" content="css3, learn, notes, 学习笔记" />
+
+
+
+<meta name="google-site-verification" content="deyHeB6rz0_cGmYfEXw5njcv54jJLlnhYyHZA6ol__w" />
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://sirm2z.github.io/post/css3-learn-notes-1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="css3 学习笔记（一）" />
+<meta property="og:description" content="css3 学习笔记（一）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sirm2z.github.io/post/css3-learn-notes-1/" />
+<meta property="article:published_time" content="2015-05-22T20:23:51&#43;08:00"/>
+<meta property="article:modified_time" content="2015-05-22T20:23:51&#43;08:00"/>
+
+<meta itemprop="name" content="css3 学习笔记（一）">
+<meta itemprop="description" content="css3 学习笔记（一）">
+
+
+<meta itemprop="datePublished" content="2015-05-22T20:23:51&#43;08:00" />
+<meta itemprop="dateModified" content="2015-05-22T20:23:51&#43;08:00" />
+<meta itemprop="wordCount" content="785">
+
+
+
+<meta itemprop="keywords" content="css3,note," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="css3 学习笔记（一）"/>
+<meta name="twitter:description" content="css3 学习笔记（一）"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">css3 学习笔记（一）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-05-22 </span>
+        <div class="post-category">
+            <a href="/categories/css3/"> css3 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#兼容性">兼容性</a></li>
+<li><a href="#边框">边框</a>
+<ul>
+<li><a href="#圆角效果-border-raidus">圆角效果 border-raidus</a></li>
+<li><a href="#阴影-box-shadow">阴影 box-shadow</a></li>
+</ul></li>
+<li><a href="#颜色">颜色</a>
+<ul>
+<li><a href="#rgba">rgba</a></li>
+<li><a href="#颜色渐变">颜色渐变</a></li>
+</ul></li>
+<li><a href="#文字-文本">文字、文本</a>
+<ul>
+<li><a href="#实现文本溢出时用-表示">实现文本溢出时用（&hellip;&hellip;）表示</a></li>
+<li><a href="#文本阴影">文本阴影</a></li>
+<li><a href="#引入本地字体-font-face">引入本地字体：@font-face</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="兼容性">兼容性</h1>
+
+<p>在编写CSS3样式时，不同的浏览器可能需要不同的前缀。它表示该CSS属性或规则尚未成为W3C标准的一部分，是浏览器的私有属性，虽然目前较新版本的浏览器都是不需要前缀的，但为了更好的向前兼容前缀还是少不了的。</p>
+
+<table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>浏览器</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-webkit</td>
+<td>chrome &amp; safari</td>
+</tr>
+
+<tr>
+<td>-moz</td>
+<td>firefox</td>
+</tr>
+
+<tr>
+<td>-ms</td>
+<td>IE</td>
+</tr>
+
+<tr>
+<td>-o</td>
+<td>opera</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="边框">边框</h1>
+
+<h2 id="圆角效果-border-raidus">圆角效果 border-raidus</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">border-radius</span><span class="p">:</span><span class="nd">10px</span><span class="o">;</span> <span class="c">/* 所有角都使用半径为10px的圆角 */</span> 
+<span class="nt">border-raidus</span><span class="p">:</span><span class="nd">2px</span> <span class="nt">3px</span> <span class="nt">4px</span> <span class="nt">5px</span><span class="o">;</span> <span class="c">/*四个半径值分别是左上，右上，右下，坐下，顺时针*/</span>
+
+<span class="c">/* 实心圆方法 */</span>
+<span class="nt">border-raidus</span><span class="p">:</span><span class="nd">10px</span><span class="o">;</span><span class="c">/*元素宽高均为10px*/</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="阴影-box-shadow">阴影 box-shadow</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">box-shadow</span><span class="p">:</span><span class="nd">4px</span> <span class="nt">2px</span> <span class="nt">6px</span> <span class="p">#</span><span class="nn">333333</span><span class="o">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>4px</code>：x轴偏移量 必须有，水平方向，允许负值</p>
+
+<p><code>2px</code>：y轴偏移量 必须有，垂直方向，允许负值</p>
+
+<p><code>6px</code>：[阴影模糊半径] 可选，模糊距离，值越大越模糊，&gt;=0</p>
+
+<p>未写：[阴影扩展半径] 可选，阴影的尺寸,值可正负</p>
+
+<p><code>#333333</code>：[阴影颜色] 可选，缺省为黑</p>
+
+<p>未写：[投影方式] 可选，inset为内阴影，缺省为外阴影</p>
+
+<p>多个阴影用逗号隔开。</p>
+
+<h1 id="颜色">颜色</h1>
+
+<h2 id="rgba">rgba</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">color</span><span class="p">:</span><span class="nd">rgba</span><span class="o">(</span><span class="nt">r</span><span class="o">,</span><span class="nt">g</span><span class="o">,</span><span class="nt">b</span><span class="o">,</span><span class="nt">a</span><span class="o">)</span><span class="c">/*a为透明度，取值0~1*/</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="颜色渐变">颜色渐变</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">background</span><span class="p">:</span><span class="nd">linear-gradient</span><span class="o">(</span><span class="nt">to</span> <span class="nt">bottom</span><span class="o">,</span> <span class="p">#</span><span class="nn">fff</span><span class="o">,</span> <span class="p">#</span><span class="nn">999</span><span class="o">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>linear-gradient</code>:渐变类型</p>
+
+<p><code>to bottom</code>:渐变方向，还可以为：to top,toleft,toright,to top left,to top right</p>
+
+<p><code>#fff</code>:起始颜色</p>
+
+<p><code>#999</code>:终止颜色</p>
+
+<p>颜色值可以放多个，在起始和终止之间</p>
+
+<h1 id="文字-文本">文字、文本</h1>
+
+<h2 id="实现文本溢出时用-表示">实现文本溢出时用（&hellip;&hellip;）表示</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">text-overflow</span><span class="p">:</span><span class="nd">ellipsis</span><span class="o">;</span><span class="c">/*溢出时的表示方式，此处为用省略号表示，还可以为clip（剪切）*/</span>
+<span class="nt">overflow</span><span class="p">:</span><span class="nd">hidden</span><span class="o">;</span><span class="c">/*溢出内容隐藏*/</span>
+<span class="nt">white-space</span><span class="p">:</span><span class="nd">nowrap</span><span class="o">;</span><span class="c">/*强制文本在一行内显示*/</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="文本阴影">文本阴影</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">text-shadow</span><span class="p">:</span><span class="nd">X-offest</span> <span class="nt">Y-offset</span> <span class="nt">blur</span> <span class="nt">color</span><span class="o">;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>X-offest</code> : 水平方向，正右负左</p>
+
+<p><code>Y-offset</code> : 垂直方向，正下负上</p>
+
+<p><code>blur</code> : 模糊值，&gt;=0,</p>
+
+<p><code>color</code> : 阴影颜色，可使用rgba</p>
+
+<h2 id="引入本地字体-font-face">引入本地字体：@font-face</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+  <span class="nt">font-family</span> <span class="o">:</span> <span class="nt">字体名称</span><span class="o">;</span>
+  <span class="nt">src</span> <span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="nt">字体文件在服务器上的相对或绝对路径</span><span class="o">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-05-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css3/">css3</a>
+          <a href="/tags/note/">note</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/css3-learn-notes-2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">css3 学习笔记（二） 选择器（包含 css2 选择器）</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/css3-learn-notes-1/" class="leancloud_visitors" data-flag-title="css3 学习笔记（一）">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">loading...</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="https://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Ryan</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139195562-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?fb92286856196a0bc351fc66101cdd55";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

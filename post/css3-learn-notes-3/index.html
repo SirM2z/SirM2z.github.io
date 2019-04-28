@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>css3 学习笔记（三） 变形与动画 - Ryan&#39;s blog - A blog about front-end</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ryan" /><meta name="description" content="css3 学习笔记（三） 变形与动画" /><meta name="keywords" content="css3, transform, transtation, learn, notes, 学习笔记" />
+
+
+
+<meta name="google-site-verification" content="deyHeB6rz0_cGmYfEXw5njcv54jJLlnhYyHZA6ol__w" />
+
+
+<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://sirm2z.github.io/post/css3-learn-notes-3/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="css3 学习笔记（三） 变形与动画" />
+<meta property="og:description" content="css3 学习笔记（三） 变形与动画" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sirm2z.github.io/post/css3-learn-notes-3/" />
+<meta property="article:published_time" content="2015-05-23T14:37:33&#43;08:00"/>
+<meta property="article:modified_time" content="2015-05-23T14:37:33&#43;08:00"/>
+
+<meta itemprop="name" content="css3 学习笔记（三） 变形与动画">
+<meta itemprop="description" content="css3 学习笔记（三） 变形与动画">
+
+
+<meta itemprop="datePublished" content="2015-05-23T14:37:33&#43;08:00" />
+<meta itemprop="dateModified" content="2015-05-23T14:37:33&#43;08:00" />
+<meta itemprop="wordCount" content="1470">
+
+
+
+<meta itemprop="keywords" content="css3,transform,transtation,note," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="css3 学习笔记（三） 变形与动画"/>
+<meta name="twitter:description" content="css3 学习笔记（三） 变形与动画"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Ryan&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Ryan&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">css3 学习笔记（三） 变形与动画</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-05-23 </span>
+        <div class="post-category">
+            <a href="/categories/css3/"> css3 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#transform">transform</a>
+<ul>
+<li><a href="#旋转-rotate">旋转&ndash;rotate()</a></li>
+<li><a href="#扭曲-skew">扭曲&ndash;skew()</a></li>
+<li><a href="#缩放-scale">缩放&ndash;scale()</a></li>
+<li><a href="#位移-translate">位移&ndash;translate()</a></li>
+<li><a href="#矩阵-matrix-a-b-c-d-e-f">矩阵&ndash;matrix(a,b,c,d,e,f)</a></li>
+<li><a href="#原点-transform-orgin">原点&ndash;transform-orgin</a></li>
+</ul></li>
+<li><a href="#动画">动画</a>
+<ul>
+<li><a href="#过度属性-transtion">过度属性&ndash;transtion</a></li>
+<li><a href="#关键帧-keyframes">关键帧&ndash;keyframes</a></li>
+<li><a href="#动画-animation">动画&ndash;animation</a>
+<ul>
+<li><a href="#animation-fill-mode"><code>animation-fill-mode</code></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="transform">transform</h1>
+
+<h2 id="旋转-rotate">旋转&ndash;rotate()</h2>
+
+<p>以中心为原点旋转，正值顺时针，负值逆时针</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">test</span> <span class="p">{</span>
+  <span class="k">transform</span><span class="p">:</span><span class="nb">rotate</span><span class="p">(</span><span class="mi">20</span><span class="kt">deg</span><span class="p">);</span>
+  <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">20</span><span class="kt">deg</span><span class="p">);</span>
+  <span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">20</span><span class="kt">deg</span><span class="p">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="扭曲-skew">扭曲&ndash;skew()</h2>
+
+<p>不会旋转，只改变形状，如长方形变成平行四边形</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">test</span> <span class="p">{</span>
+  <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nf">skew</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span><span class="p">);</span>
+  <span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nf">skew</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span><span class="p">);</span>
+  <span class="k">transform</span><span class="p">:</span><span class="nf">skew</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span><span class="p">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="缩放-scale">缩放&ndash;scale()</h2>
+
+<p>scale(x,y)，水平与垂直方向，只有一个参数则倍数相同</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">test</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="p">:</span> <span class="mf">.5</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">0.8</span><span class="p">);</span>
+  <span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">0.8</span><span class="p">);</span>
+  <span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">0.8</span><span class="p">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="位移-translate">位移&ndash;translate()</h2>
+
+<p>translate(x,y)，水平与垂直方向方向</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">test</span> <span class="p">{</span>
+  <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span><span class="nb">translate</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">,</span><span class="mi">-50</span><span class="kt">%</span><span class="p">);</span>
+  <span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span><span class="nb">translate</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">,</span><span class="mi">-50</span><span class="kt">%</span><span class="p">);</span>
+  <span class="k">transform</span><span class="p">:</span><span class="nb">translate</span><span class="p">(</span><span class="mi">-50</span><span class="kt">%</span><span class="p">,</span><span class="mi">-50</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span><span class="c">/*水平垂直方向居中*/</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="矩阵-matrix-a-b-c-d-e-f">矩阵&ndash;matrix(a,b,c,d,e,f)</h2>
+
+<p>含6个值的变换矩阵，用来指定一个2D变换，属性值涉及到数学中的矩阵知识</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">test</span> <span class="p">{</span>
+  <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">matrix</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
+  <span class="k">transform</span><span class="p">:</span> <span class="nb">matrix</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span><span class="c">/*相当于translate(100px,100px);*/</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="原点-transform-orgin">原点&ndash;transform-orgin</h2>
+
+<p>设置元素中心点，取值（top,bottom,left,right,top left,top right,bottom right,bottom left），默认情况下旋转、扭曲等变形都是基于元素自己中心位置变形的，这个属性可以改变元素中心点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">test</span> <span class="p">{</span>
+  <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nf">skew</span><span class="p">(</span><span class="mi">15</span><span class="kt">deg</span><span class="p">);</span>
+  <span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nf">skew</span><span class="p">(</span><span class="mi">15</span><span class="kt">deg</span><span class="p">);</span>
+  <span class="k">transform</span><span class="p">:</span> <span class="nf">skew</span><span class="p">(</span><span class="mi">15</span><span class="kt">deg</span><span class="p">);</span>
+  <span class="kp">-webkit-</span><span class="k">transform-origin</span><span class="p">:</span> <span class="kc">top</span> <span class="kc">right</span><span class="p">;</span>
+  <span class="kp">-moz-</span><span class="k">transform-origin</span><span class="p">:</span> <span class="kc">top</span> <span class="kc">right</span><span class="p">;</span>
+  <span class="k">transform-origin</span><span class="p">:</span> <span class="kc">top</span> <span class="kc">right</span><span class="p">;</span>
+<span class="p">}</span><span class="c">/*基于右上角扭曲15度*/</span></code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="动画">动画</h1>
+
+<h2 id="过度属性-transtion">过度属性&ndash;transtion</h2>
+
+<ul>
+<li><code>property</code> 指定过度css属性</li>
+<li><code>duration</code> 指定过度完成时间</li>
+<li><code>timing-function</code> 指定过度函数</li>
+<li><code>delay</code> 指定开始过度的延迟时间</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">div</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transition-property</span><span class="p">:</span> <span class="k">width</span><span class="p">;</span>
+  <span class="k">transition-property</span><span class="p">:</span> <span class="k">width</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transition-duration</span><span class="p">:</span><span class="mf">.5</span><span class="kt">s</span><span class="p">;</span>
+  <span class="k">transition-duration</span><span class="p">:</span><span class="mf">.5</span><span class="kt">s</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transition-timing-function</span><span class="p">:</span> <span class="kc">ease</span><span class="o">-</span><span class="n">in</span><span class="p">;</span>
+  <span class="k">transition-timing-function</span><span class="p">:</span> <span class="kc">ease</span><span class="o">-</span><span class="n">in</span><span class="p">;</span>
+  <span class="kp">-webkit-</span><span class="k">transition-delay</span><span class="p">:</span> <span class="mf">.18</span><span class="kt">s</span><span class="p">;</span>
+  <span class="k">transition-delay</span><span class="p">:</span><span class="mf">.18</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span><span class="c">/*等价于transtion(width,.5s,ease-in,.18s)*/</span>
+<span class="nt">div</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span><span class="c">/*宽度由200变为400*/</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>多个属性需要过渡时，用逗号隔开如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">a</span><span class="p">{</span> <span class="k">transition</span><span class="p">:</span> <span class="k">background</span> <span class="mf">0.8</span><span class="kt">s</span> <span class="kc">ease</span><span class="o">-</span><span class="n">in</span> <span class="mf">0.3</span><span class="p">,</span><span class="kc">color</span> <span class="mf">0.6</span><span class="kt">s</span> <span class="kc">ease</span><span class="o">-</span><span class="n">out</span> <span class="mf">0.3</span><span class="p">;}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>timing-function</code>(过度函数)：ease,linear,ease-in,ease-out,ease-in-out,具体如下图</p>
+
+<p><img src="/huandonghanshu.png" alt="缓动函数速查表" /></p>
+
+<h2 id="关键帧-keyframes">关键帧&ndash;keyframes</h2>
+
+<p>后紧跟动画名加一对花括号{}，0%-&gt;100%可以用from-&gt;to表示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">keyframes</span> <span class="nt">changecolor</span><span class="p">{</span>
+  <span class="nt">0</span><span class="o">%</span><span class="p">{</span>
+    <span class="k">background</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">40</span><span class="o">%</span><span class="p">{</span>
+    <span class="k">background</span><span class="p">:</span><span class="kc">orange</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">80</span><span class="o">%</span><span class="p">{</span>
+    <span class="k">background</span><span class="p">:</span><span class="kc">green</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">100</span><span class="o">%</span><span class="p">{</span>
+    <span class="k">background</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span><span class="mh">#fff</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+  <span class="k">animation</span><span class="p">:</span> <span class="n">changecolor</span> <span class="mi">5</span><span class="kt">s</span> <span class="kc">ease</span><span class="o">-</span><span class="n">out</span> <span class="mf">.2</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="动画-animation">动画&ndash;animation</h2>
+
+<p>分别有如下几个属性，其中timing-function与过渡中的timing-function有一样的方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">animation-name</span><span class="p">:</span><span class="nd">around</span><span class="o">;</span><span class="c">/*动画名*/</span>
+<span class="nt">animation-duration</span><span class="o">:</span> <span class="nt">10s</span><span class="o">;</span><span class="c">/*动画在这个时间段内完成*/</span>
+<span class="nt">animation-timing-function</span><span class="o">:</span> <span class="nt">ease</span><span class="o">;</span><span class="c">/*动画播放方式*/</span>
+<span class="nt">animation-delay</span><span class="o">:</span> <span class="nt">1s</span><span class="o">;</span><span class="c">/*动画延迟，在这个时间段后开始*/</span>
+<span class="nt">animation-iteration-count</span><span class="p">:</span><span class="nd">infinite</span><span class="o">;</span><span class="c">/*动画播放次数，通常为整数，此处意思是无限播放*/</span>
+<span class="nt">animation-direction</span><span class="p">:</span><span class="nd">alternate</span><span class="o">;</span><span class="c">/*normal是默认值，如果设置为normal时，动画的每次循环都是向前播放；此处是alternate，他的作用是，动画播放在第偶数次向前播放，第奇数次向反方向播放。*/</span>
+<span class="nt">animation-play-state</span><span class="p">:</span><span class="nd">running</span><span class="o">;</span><span class="c">/*这个属性应该设在hover下，元素本身的属性设置为paused；意思是让停止的动画在hover的时候播放，不是hover状态停止*/</span>
+<span class="nt">animation-fill-mode</span><span class="p">:</span><span class="nd">none</span><span class="o">;</span><span class="c">/*设置动画时间外属性，详情如下表*/</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="animation-fill-mode"><code>animation-fill-mode</code></h3>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>效果</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>none</td>
+<td>默认值，表示动画将按预期进行和结束，在动画完成最后一帧时，动画会反转到初始帧处</td>
+</tr>
+
+<tr>
+<td>forwards</td>
+<td>表示动画在结束后继续应用最后的关键帧的位置</td>
+</tr>
+
+<tr>
+<td>backwards</td>
+<td>会在向元素应用动画样式时迅速应用动画的初始帧</td>
+</tr>
+
+<tr>
+<td>both</td>
+<td>元素动画同时具有forwards和backwards效果</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ryan</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-05-23
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css3/">css3</a>
+          <a href="/tags/transform/">transform</a>
+          <a href="/tags/transtation/">transtation</a>
+          <a href="/tags/note/">note</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/css3-learn-notes-4/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">css3 学习笔记（四） 布局样式相关</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/css3-learn-notes-2/">
+            <span class="next-text nav-default">css3 学习笔记（二） 选择器（包含 css2 选择器）</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+    <span id="/post/css3-learn-notes-3/" class="leancloud_visitors" data-flag-title="css3 学习笔记（三） 变形与动画">
+      <span class="post-meta-item-text">文章阅读量 </span>
+      <span class="leancloud-visitors-count">loading...</span>
+      <p></p>
+    </span>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'VjE2tE7PFKE9FNnTgs8NQJpz-gzGzoHsz',
+          appKey: 'Q4nFUmeVChxdeC7PRGGKq3eQ',
+          notify: 'false', 
+          verify: 'false', 
+          avatar:'robohash', 
+          placeholder: '说点什么吧...',
+          visitor: 'true'
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/SirM2z" class="iconfont icon-github" title="github"></a>
+  <a href="https://sirm2z.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Ryan</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-139195562-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?fb92286856196a0bc351fc66101cdd55";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

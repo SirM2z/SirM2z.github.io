@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>微信小程序 on Ryan&#39;s blog - A blog about front-end</title>
+    <link>https://sirm2z.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+    <description>Recent content in 微信小程序 on Ryan&#39;s blog - A blog about front-end</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Ryan</copyright>
+    <lastBuildDate>Fri, 14 Oct 2016 11:15:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://sirm2z.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微信小程序分享</title>
+      <link>https://sirm2z.github.io/post/wechat-mini-program-share/</link>
+      <pubDate>Fri, 14 Oct 2016 11:15:22 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/wechat-mini-program-share/</guid>
+      <description>大家好，我是技术部做前端工作的Ryan，关于微信小程序的概念和功能以及它的前景，前边Tim已经介绍的非常详细，而我将以前端的视角为大家介绍一</description>
+    </item>
+    
+  </channel>
+</rss>

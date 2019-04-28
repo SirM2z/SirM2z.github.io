@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["Uz2U"],{Uz2U:function(e,t,l){"use strict";l.r(t);var n={name:"Role"},s=l("KHd+"),a=Object(s.a)(n,function(e,t){var l=t._c;return l("div",{staticStyle:{padding:"30px"}},[l("el-alert",{attrs:{closable:!1,title:"角色",type:"success"}})],1)},[],!0,null,null,null);a.options.__file="role.vue";t.default=a.exports}}]);

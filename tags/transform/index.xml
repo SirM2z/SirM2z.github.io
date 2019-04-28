@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>transform on Ryan&#39;s blog - A blog about front-end</title>
+    <link>https://sirm2z.github.io/tags/transform/</link>
+    <description>Recent content in transform on Ryan&#39;s blog - A blog about front-end</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Ryan</copyright>
+    <lastBuildDate>Sat, 23 May 2015 14:37:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://sirm2z.github.io/tags/transform/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>css3 学习笔记（三） 变形与动画</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-3/</link>
+      <pubDate>Sat, 23 May 2015 14:37:33 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-3/</guid>
+      <description>transform 旋转&amp;ndash;rotate() 以中心为原点旋转，正值顺时针，负值逆时针 1 2 3 4 5 #test { transform:rotate(20deg); -webkit-transform: rotate(20deg); -moz-transform: rotate(20deg); } 扭曲&amp;ndash;skew() 不会旋转</description>
+    </item>
+    
+  </channel>
+</rss>

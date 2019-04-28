@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>选择器 on Ryan&#39;s blog - A blog about front-end</title>
+    <link>https://sirm2z.github.io/tags/%E9%80%89%E6%8B%A9%E5%99%A8/</link>
+    <description>Recent content in 选择器 on Ryan&#39;s blog - A blog about front-end</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Ryan</copyright>
+    <lastBuildDate>Sat, 23 May 2015 13:43:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://sirm2z.github.io/tags/%E9%80%89%E6%8B%A9%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>css3 学习笔记（二） 选择器（包含 css2 选择器）</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-2/</link>
+      <pubDate>Sat, 23 May 2015 13:43:05 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-2/</guid>
+      <description>css3 选择器 属性选择器 首先选到含有att属性的E元素 E[att=&amp;ldquo;val&amp;rdquo;] ，表示：att属性等于val的元素 input[type=&amp;quot;text&amp;quot;] E[att^=&amp;ldquo;val&amp;rdquo;] ，^表示：att属性开头为val的元素 div[class^=&amp;quot;box&amp;quot;] E[att$=&amp;ldquo;val&amp;rdquo;] ，$表示：</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>媒体查询 on Ryan&#39;s blog - A blog about front-end</title>
+    <link>https://sirm2z.github.io/tags/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/</link>
+    <description>Recent content in 媒体查询 on Ryan&#39;s blog - A blog about front-end</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Ryan</copyright>
+    <lastBuildDate>Mon, 25 May 2015 20:18:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://sirm2z.github.io/tags/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>css3 学习笔记（五） 媒体查询与响应式</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-5/</link>
+      <pubDate>Mon, 25 May 2015 20:18:53 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-5/</guid>
+      <description>媒体类型 其中 Screen、 All 和 Print 为最常见的三种媒体类型。 值 设备类型 All 所有设备 Braille 盲人用点字法触觉回馈设备 Embossed 盲文打印机 Handheld 便携设备 Print 打印用纸或打印</description>
+    </item>
+    
+  </channel>
+</rss>

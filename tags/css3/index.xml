@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>css3 on Ryan&#39;s blog - A blog about front-end</title>
+    <link>https://sirm2z.github.io/tags/css3/</link>
+    <description>Recent content in css3 on Ryan&#39;s blog - A blog about front-end</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Ryan</copyright>
+    <lastBuildDate>Mon, 25 May 2015 20:18:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://sirm2z.github.io/tags/css3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>css3 学习笔记（五） 媒体查询与响应式</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-5/</link>
+      <pubDate>Mon, 25 May 2015 20:18:53 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-5/</guid>
+      <description>媒体类型 其中 Screen、 All 和 Print 为最常见的三种媒体类型。 值 设备类型 All 所有设备 Braille 盲人用点字法触觉回馈设备 Embossed 盲文打印机 Handheld 便携设备 Print 打印用纸或打印</description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（四） 布局样式相关</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-4/</link>
+      <pubDate>Mon, 25 May 2015 17:22:01 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-4/</guid>
+      <description>多列布局&amp;ndash;columns 1 2 3 4 5 6 7 8 9 column-width：列宽，如200px column-count：列数，如5 col</description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（三） 变形与动画</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-3/</link>
+      <pubDate>Sat, 23 May 2015 14:37:33 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-3/</guid>
+      <description>transform 旋转&amp;ndash;rotate() 以中心为原点旋转，正值顺时针，负值逆时针 1 2 3 4 5 #test { transform:rotate(20deg); -webkit-transform: rotate(20deg); -moz-transform: rotate(20deg); } 扭曲&amp;ndash;skew() 不会旋转</description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（二） 选择器（包含 css2 选择器）</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-2/</link>
+      <pubDate>Sat, 23 May 2015 13:43:05 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-2/</guid>
+      <description>css3 选择器 属性选择器 首先选到含有att属性的E元素 E[att=&amp;ldquo;val&amp;rdquo;] ，表示：att属性等于val的元素 input[type=&amp;quot;text&amp;quot;] E[att^=&amp;ldquo;val&amp;rdquo;] ，^表示：att属性开头为val的元素 div[class^=&amp;quot;box&amp;quot;] E[att$=&amp;ldquo;val&amp;rdquo;] ，$表示：</description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（一）</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-1/</link>
+      <pubDate>Fri, 22 May 2015 20:23:51 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-1/</guid>
+      <description>兼容性 在编写CSS3样式时，不同的浏览器可能需要不同的前缀。它表示该CSS属性或规则尚未成为W3C标准的一部分，是浏览器的私有属性，虽然目前</description>
+    </item>
+    
+  </channel>
+</rss>

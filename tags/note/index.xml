@@ -72,7 +72,7 @@
       <pubDate>Thu, 04 May 2017 20:22:37 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/vue2-responsive-data-achieve/</guid>
-      <description>实现的最终目标 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const demo = new Vue({ data: { text: &amp;#34;before&amp;#34;, }, // 对应的template 为 &amp;lt;div&amp;gt;&amp;lt;span&amp;gt;{{text}}&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; render(h){ return h(&amp;#39;div&amp;#39;, {}, [ h(&amp;#39;span&amp;#39;, {}, [this.__toString__(this.text)]) ]) } }) setTimeout(function(){ demo.text = &amp;#34;after&amp;#34; }, 3000) 对应的虚拟DOM</description>
+      <description></description>
     </item>
     
     <item>
@@ -162,7 +162,7 @@
       <pubDate>Wed, 01 Jun 2016 17:02:37 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/webpack-learn-notes/</guid>
-      <description></description>
+      <description>webpack.config.js配置文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49</description>
     </item>
     
     <item>
@@ -180,7 +180,52 @@
       <pubDate>Wed, 01 Jun 2016 16:58:04 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/react-learn-notes/</guid>
-      <description>组件的生命周期 Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM React 为每个状态都提供了两种处理函</description>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（五） 媒体查询与响应式</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-5/</link>
+      <pubDate>Mon, 25 May 2015 20:18:53 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-5/</guid>
+      <description>媒体类型 其中 Screen、 All 和 Print 为最常见的三种媒体类型。 值 设备类型 All 所有设备 Braille 盲人用点字法触觉回馈设备 Embossed 盲文打印机 Handheld 便携设备 Print 打印用纸或打印</description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（四） 布局样式相关</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-4/</link>
+      <pubDate>Mon, 25 May 2015 17:22:01 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-4/</guid>
+      <description>多列布局&amp;ndash;columns 1 2 3 4 5 6 7 8 9 column-width：列宽，如200px column-count：列数，如5 col</description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（三） 变形与动画</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-3/</link>
+      <pubDate>Sat, 23 May 2015 14:37:33 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-3/</guid>
+      <description>transform 旋转&amp;ndash;rotate() 以中心为原点旋转，正值顺时针，负值逆时针 1 2 3 4 5 #test { transform:rotate(20deg); -webkit-transform: rotate(20deg); -moz-transform: rotate(20deg); } 扭曲&amp;ndash;skew() 不会旋转</description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（二） 选择器（包含 css2 选择器）</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-2/</link>
+      <pubDate>Sat, 23 May 2015 13:43:05 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-2/</guid>
+      <description>css3 选择器 属性选择器 首先选到含有att属性的E元素 E[att=&amp;ldquo;val&amp;rdquo;] ，表示：att属性等于val的元素 input[type=&amp;quot;text&amp;quot;] E[att^=&amp;ldquo;val&amp;rdquo;] ，^表示：att属性开头为val的元素 div[class^=&amp;quot;box&amp;quot;] E[att$=&amp;ldquo;val&amp;rdquo;] ，$表示：</description>
+    </item>
+    
+    <item>
+      <title>css3 学习笔记（一）</title>
+      <link>https://sirm2z.github.io/post/css3-learn-notes-1/</link>
+      <pubDate>Fri, 22 May 2015 20:23:51 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/css3-learn-notes-1/</guid>
+      <description>兼容性 在编写CSS3样式时，不同的浏览器可能需要不同的前缀。它表示该CSS属性或规则尚未成为W3C标准的一部分，是浏览器的私有属性，虽然目前</description>
     </item>
     
   </channel>
