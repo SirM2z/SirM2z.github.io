@@ -18,7 +18,7 @@
       <pubDate>Thu, 04 May 2017 20:22:37 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/vue2-responsive-data-achieve/</guid>
-      <description></description>
+      <description>实现的最终目标 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const demo = new Vue({ data: { text: &amp;#34;before&amp;#34;, }, // 对应的template 为 &amp;lt;div&amp;gt;&amp;lt;span&amp;gt;{{text}}&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; render(h){ return h(&amp;#39;div&amp;#39;, {}, [ h(&amp;#39;span&amp;#39;, {}, [this.__toString__(this.text)]) ]) } }) setTimeout(function(){ demo.text = &amp;#34;after&amp;#34; }, 3000) 对应的虚拟DOM</description>
     </item>
     
   </channel>

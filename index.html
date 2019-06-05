@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://sirm2z.github.io/" />
 
-<meta property="og:updated_time" content="2018-05-30T21:44:04&#43;08:00"/>
+<meta property="og:updated_time" content="2019-06-04T19:44:04&#43;08:00"/>
 
 <meta itemprop="name" content="Ryan&#39;s blog - A blog about front-end">
 <meta itemprop="description" content="A blog of front-end.">
@@ -119,6 +119,27 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/promise-a-achieve-1/">一步步实现 Promises/A&#43; 规范 - 系列一 </a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-06-04 </span>
+      <div class="post-category">
+          <a href="/categories/promise/"> Promise </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      
+    </div>
+    <div class="read-more">
+      <a href="/post/promise-a-achieve-1/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/ast-share/">从 AST (抽象语法树)角度看前端</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-05-30 </span>
@@ -151,7 +172,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      
+      [[Prototype]] 链 1 2 3 4 5 6 function Foo () { this.tmp = &#39;b&#39; } var a = new Foo() Object.getPrototypeOf(a) === Foo.prototype // true a.tmp // &#39;b&#39; 调用 new Foo() 时会创建 a， 其中的一步就是给 a 一个内部的 [[Prototype]] 链接， 关联到 Foo.prototype 指向的那个对象。 constructor
     </div>
     <div class="read-more">
       <a href="/post/you-dont-know-js-read-notes-5/" class="read-more-link">阅读更多</a>
@@ -277,7 +298,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      
+      实现的最终目标 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const demo = new Vue({ data: { text: &#34;before&#34;, }, // 对应的template 为 &lt;div&gt;&lt;span&gt;{{text}}&lt;/span&gt;&lt;/div&gt; render(h){ return h(&#39;div&#39;, {}, [ h(&#39;span&#39;, {}, [this.__toString__(this.text)]) ]) } }) setTimeout(function(){ demo.text = &#34;after&#34; }, 3000) 对应的虚拟DOM
     </div>
     <div class="read-more">
       <a href="/post/vue2-responsive-data-achieve/" class="read-more-link">阅读更多</a>
@@ -487,7 +508,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      字符串扩展 for&hellip;of循环遍历字符串 1 2 3 4 5 6 7 let text = &#39;abc&#39; for (let i of text) { console.log(i); } //a //b //c 新增确定一个字符串是否包含在另一个字符串中，e
+      
     </div>
     <div class="read-more">
       <a href="/post/es6-learn-notes-3/" class="read-more-link">阅读更多</a>
@@ -512,27 +533,6 @@
     </div>
     <div class="read-more">
       <a href="/post/es6-learn-notes-2/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/es6-learn-notes-1/">ES6 学习笔记（一）-- let const</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-06-01 </span>
-      <div class="post-category">
-          <a href="/categories/es6/"> ES6 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      let和const命令 let和const声明的变量只在代码块内有效 1 2 3 4 5 6 7 { let a = 10; var b = 1; } a // ReferenceError: a is not defined. b // 1 不存在变量提升 变量一
-    </div>
-    <div class="read-more">
-      <a href="/post/es6-learn-notes-1/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

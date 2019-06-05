@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Ryan</copyright>
-    <lastBuildDate>Wed, 30 May 2018 21:44:04 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2019 19:44:04 +0800</lastBuildDate>
     
 	<atom:link href="https://sirm2z.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Promise</title>
+      <link>https://sirm2z.github.io/categories/promise/</link>
+      <pubDate>Tue, 04 Jun 2019 19:44:04 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/categories/promise/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AST</title>
