@@ -10,38 +10,52 @@
   
   <url>
     <loc>https://sirm2z.github.io/categories/</loc>
-    <lastmod>2019-06-04T19:44:04+08:00</lastmod>
+    <lastmod>2019-06-05T20:44:04+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sirm2z.github.io/post/</loc>
-    <lastmod>2019-06-04T19:44:04+08:00</lastmod>
+    <lastmod>2019-06-05T20:44:04+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sirm2z.github.io/categories/promise/</loc>
-    <lastmod>2019-06-04T19:44:04+08:00</lastmod>
+    <lastmod>2019-06-05T20:44:04+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sirm2z.github.io/tags/promise/</loc>
-    <lastmod>2019-06-04T19:44:04+08:00</lastmod>
+    <lastmod>2019-06-05T20:44:04+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sirm2z.github.io/</loc>
-    <lastmod>2019-06-04T19:44:04+08:00</lastmod>
+    <lastmod>2019-06-05T20:44:04+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sirm2z.github.io/tags/</loc>
-    <lastmod>2019-06-04T19:44:04+08:00</lastmod>
+    <lastmod>2019-06-05T20:44:04+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sirm2z.github.io/post/promise-a-achieve-3/</loc>
+    <lastmod>2019-06-05T20:44:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://sirm2z.github.io/post/promise-a-achieve-2/</loc>
+    <lastmod>2019-06-05T19:30:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>

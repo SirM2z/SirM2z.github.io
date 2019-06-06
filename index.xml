@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Ryan</copyright>
-    <lastBuildDate>Tue, 04 Jun 2019 19:44:04 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 20:44:04 +0800</lastBuildDate>
     
 	<atom:link href="https://sirm2z.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,12 +22,30 @@
     </item>
     
     <item>
-      <title>一步步实现 Promises/A&#43; 规范 - 系列一 </title>
+      <title>一步步实现 Promises/A&#43; 规范 -- 系列三 </title>
+      <link>https://sirm2z.github.io/post/promise-a-achieve-3/</link>
+      <pubDate>Wed, 05 Jun 2019 20:44:04 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/promise-a-achieve-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>一步步实现 Promises/A&#43; 规范 -- 系列二 </title>
+      <link>https://sirm2z.github.io/post/promise-a-achieve-2/</link>
+      <pubDate>Wed, 05 Jun 2019 19:30:04 +0800</pubDate>
+      
+      <guid>https://sirm2z.github.io/post/promise-a-achieve-2/</guid>
+      <description>一步步实现 Promises/A+ 规范 &amp;ndash; 系列 系列一 &amp;ndash; 实现规范对状态以及部分 then 方法的要求 系列二 &amp;ndash; 实现 then 链 系列三 &amp;ndash; 实现 catch all resolve reject 方法 then 链实现 上一篇文章实现了 Promises/A+ 规范中对 state</description>
+    </item>
+    
+    <item>
+      <title>一步步实现 Promises/A&#43; 规范 -- 系列一 </title>
       <link>https://sirm2z.github.io/post/promise-a-achieve-1/</link>
       <pubDate>Tue, 04 Jun 2019 19:44:04 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/promise-a-achieve-1/</guid>
-      <description></description>
+      <description>一步步实现 Promises/A+ 规范 &amp;ndash; 系列 系列一 &amp;ndash; 实现规范对状态以及部分 then 方法的要求 系列二 &amp;ndash; 实现 then 链 系列三 &amp;ndash; 实现 catch all resolve reject 方法 Promises/A+ 规范 Promises/A+ 规范官网定义 一些术语 翻译: promise</description>
     </item>
     
     <item>
@@ -45,7 +63,7 @@
       <pubDate>Wed, 22 Nov 2017 22:57:16 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-5/</guid>
-      <description>[[Prototype]] 链 1 2 3 4 5 6 function Foo () { this.tmp = &amp;#39;b&amp;#39; } var a = new Foo() Object.getPrototypeOf(a) === Foo.prototype // true a.tmp // &amp;#39;b&amp;#39; 调用 new Foo() 时会创建 a， 其中的一步就是给 a 一个内部的 [[Prototype]] 链接， 关联到 Foo.prototype 指向的那个对象。 constructor</description>
+      <description></description>
     </item>
     
     <item>
@@ -54,7 +72,7 @@
       <pubDate>Wed, 22 Nov 2017 22:56:16 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/you-dont-know-js-read-notes-4/</guid>
-      <description>寄生继承 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 //“传统的 JavaScript 类” Vehicle function Vehicle() { this.ehgines = 1; } Vehicle.prototype.ignition = function() { console.log( &amp;#34;Turning on my engine.&amp;#34; ); }; Vehicle.prototype.drive = function() {</description>
+      <description></description>
     </item>
     
     <item>
@@ -90,7 +108,7 @@
       <pubDate>Thu, 11 May 2017 22:02:37 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/flexbox-learn-notes/</guid>
-      <description>flexbox 巩固加深 配合flexbox工具食用更佳 flexbox 支持情况 整体印象 flex: 0 ( flex-grow ) 1 ( flex-shrink ) auto ( flex-basis ); 默认值-( 属性 ) flex-basis 控制着元素在沿着主轴上 grow 和 shrik 之前最终能</description>
+      <description></description>
     </item>
     
     <item>
@@ -189,7 +207,7 @@
       <pubDate>Wed, 01 Jun 2016 20:02:39 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/es6-learn-notes-3/</guid>
-      <description></description>
+      <description>字符串扩展 for&amp;hellip;of循环遍历字符串 1 2 3 4 5 6 7 let text = &amp;#39;abc&amp;#39; for (let i of text) { console.log(i); } //a //b //c 新增确定一个字符串是否包含在另一个字符串中，e</description>
     </item>
     
     <item>
@@ -243,7 +261,7 @@
       <pubDate>Wed, 01 Jun 2016 16:58:04 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/react-learn-notes/</guid>
-      <description></description>
+      <description>组件的生命周期 Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM React 为每个状态都提供了两种处理函</description>
     </item>
     
     <item>

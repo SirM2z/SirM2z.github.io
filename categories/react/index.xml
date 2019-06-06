@@ -18,7 +18,7 @@
       <pubDate>Wed, 01 Jun 2016 16:58:04 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/react-learn-notes/</guid>
-      <description></description>
+      <description>组件的生命周期 Mounting：已插入真实 DOM Updating：正在被重新渲染 Unmounting：已移出真实 DOM React 为每个状态都提供了两种处理函</description>
     </item>
     
   </channel>
