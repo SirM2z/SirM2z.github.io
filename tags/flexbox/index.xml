@@ -18,7 +18,7 @@
       <pubDate>Thu, 11 May 2017 22:02:37 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/flexbox-learn-notes/</guid>
-      <description></description>
+      <description>flexbox 巩固加深 配合flexbox工具食用更佳 flexbox 支持情况 整体印象 flex: 0 ( flex-grow ) 1 ( flex-shrink ) auto ( flex-basis ); 默认值-( 属性 ) flex-basis 控制着元素在沿着主轴上 grow 和 shrik 之前最终能</description>
     </item>
     
   </channel>

@@ -18,7 +18,7 @@
       <pubDate>Wed, 05 Jun 2019 20:44:04 +0800</pubDate>
       
       <guid>https://sirm2z.github.io/post/promise-a-achieve-3/</guid>
-      <description></description>
+      <description>一步步实现 Promises/A+ 规范 &amp;ndash; 系列 系列一 &amp;ndash; 实现规范对状态以及部分 then 方法的要求 系列二 &amp;ndash; 实现 then 链 系列三 &amp;ndash; 实现 catch all resolve reject 方法 catch 实现 上一篇文章实现了 Promises/A+ 规范中对 then 方</description>
     </item>
     
     <item>

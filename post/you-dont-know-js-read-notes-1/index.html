@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="deyHeB6rz0_cGmYfEXw5njcv54jJLlnhYyHZA6ol__w" />
 
 
-<meta name="generator" content="Hugo 0.55.4 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.56.0 with even 4.0.0" />
 
 
 <link rel="canonical" href="https://sirm2z.github.io/post/you-dont-know-js-read-notes-1/" />
@@ -42,9 +42,8 @@
 <meta property="og:description" content="你不知道的 JS 读书笔记（一）-- 作用域" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sirm2z.github.io/post/you-dont-know-js-read-notes-1/" />
-<meta property="article:published_time" content="2017-11-22T22:53:16&#43;08:00"/>
-<meta property="article:modified_time" content="2017-11-22T22:53:16&#43;08:00"/>
-
+<meta property="article:published_time" content="2017-11-22T22:53:16+08:00" />
+<meta property="article:modified_time" content="2017-11-22T22:53:16+08:00" />
 <meta itemprop="name" content="你不知道的 JS 读书笔记（一）-- 作用域">
 <meta itemprop="description" content="你不知道的 JS 读书笔记（一）-- 作用域">
 
@@ -172,8 +171,7 @@
 <p><code>console.log(a)</code></p>
 
 <ul>
-<li>引擎对a的查找是RHS查询，指查询a的实际值，并传递给<code>console.log()</code>方法作为参数</li>
-</ul>
+<li><p>引擎对a的查找是RHS查询，指查询a的实际值，并传递给<code>console.log()</code>方法作为参数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
@@ -184,18 +182,21 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">foo</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>对<code>foo</code>进行<code>RHS</code>查询，并进行方法调用</li>
-<li>隐式对a进行赋值：<code>a=2</code>，对a进行<code>LHS</code>查询</li>
-<li>对<code>console.log</code>进行<code>RHS</code>查询</li>
-<li>对<code>console.log(a)</code>中的a进行<code>RHS</code>查询</li>
+</div></li>
+
+<li><p>对<code>foo</code>进行<code>RHS</code>查询，并进行方法调用</p></li>
+
+<li><p>隐式对a进行赋值：<code>a=2</code>，对a进行<code>LHS</code>查询</p></li>
+
+<li><p>对<code>console.log</code>进行<code>RHS</code>查询</p></li>
+
+<li><p>对<code>console.log(a)</code>中的a进行<code>RHS</code>查询</p></li>
 </ul>
 
 <blockquote>
